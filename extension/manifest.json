@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Food Reviews App",
+  "version": "2.1",
+  "description": "Gets information from Google Reviews.",
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "https://*.google.com/*",
+    "https://*.execute-api.us-east-2.amazonaws.com/*"
+  ]
+}
