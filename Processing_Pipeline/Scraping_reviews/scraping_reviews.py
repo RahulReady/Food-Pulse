@@ -9,6 +9,10 @@ import time
 # [] Send df to NLP script
 # [] How to pass in url to this script from the chrome extension?
 
+def test1():
+    print('Works 10')
+    return 
+
 # Chromedriver setup
 def setup():
     # Pointing to downloaded chromedriver
@@ -20,7 +24,7 @@ def setup():
 # Reading the current url
 def read_data(driver, url):
     # Open the specified URL
-    driver.get(url);
+    driver.get(url)
 
     # Do processing stuff here ***************** CODE MAGIC GOES HERE
     print('success')

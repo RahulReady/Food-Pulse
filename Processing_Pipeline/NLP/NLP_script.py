@@ -1,12 +1,13 @@
 import pandas as pd
-# TODO
+# To do
 # [] Baseline script
 # [] NLP stuff
 
+def test():
+    print('Works 9')
+    return 
+
+
 # Chromedriver setup
-def nlp_analysis(df):
-    # do nlp stuff here. Maybe split into different functions?
-
-
-
-    if __name__ == "__main__":
+# def nlp_analysis(df):
+#     # do nlp stuff here. Maybe split into different functions?
