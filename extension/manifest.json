@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Food Reviews App",
+  "name": "Food Pulse",
   "version": "2.1",
   "description": "Gets information from Google Reviews.",
 
