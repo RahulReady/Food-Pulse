@@ -11,7 +11,7 @@ import time
 
 def test1():
     print('Works 10')
-    return 
+    return
 
 # Chromedriver setup
 def setup():
@@ -19,6 +19,7 @@ def setup():
     driver_location = os.getcwd() + '/Processing_Pipeline/Scraping_reviews/chrome_driver/chromedriver'
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(driver_location)
+    hellooooooo
     return driver
 
 # Reading the current url
