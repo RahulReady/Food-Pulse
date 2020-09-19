@@ -3,11 +3,11 @@ import pandas as pd
 # [] Baseline script
 # [] NLP stuff
 
-def test():
-    print('Works 9')
-    return 
-
 
 # Chromedriver setup
 # def nlp_analysis(df):
 #     # do nlp stuff here. Maybe split into different functions?
+
+def test():
+    print('Works 9')
+    return
