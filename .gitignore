@@ -3,6 +3,8 @@
 #Python
 *.pyc
 __pycache__/
+env/
 
 #Docker
 *.zip
+
