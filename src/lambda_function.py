@@ -1,30 +1,22 @@
-
-
-#Todo
-# [] Set up venv and add chromedriver to that
-
-# https://stackoverflow.com/questions/37233140/python-module-not-found
-
-# General Imports
-import sys, os # Useful directory imports
-import importlib # Needed for testing changes to code
-print(os.getcwd())
+import sys, os
+# import importlib # Needed for testing changes to code
 
 # Script Imports
-from src.NLP_script import test10, test11
-from src.scraping_reviews import *
+from review_scraper import *
+# from NLP_script import test10, test11
 
 # Following code needed if the Processing Pipeline scripts are updated
 # importlib.reload(src.NLP_script)
 # importlib.reload(src.scraping_reviews)
 
-
-
 def lambda_handler(event, context):
-  scrape_reviews(event)
+  # url = event["params"]["querystring"]["url"]
+  
+  scraper = GoogleReviewScraper()
+  # reviews = scraper.get_reviews(url)
 
   return{
-    'body': event
+    'url': event,
+    # 'reviews': reviews
   }
-
-
+  

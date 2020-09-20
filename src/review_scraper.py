@@ -16,10 +16,26 @@ class GoogleReviewScraper:
 
     # Init the driver with chromedriver and related options
     def __get_driver(self):
-        driver_location = os.getcwd() + '/lib/chromedriver'
-        options = webdriver.ChromeOptions()
-        # options.add_argument('headless')
-        driver = webdriver.Chrome(driver_location, options=options)
+        # driver_location = os.getcwd() + '/local_lib/chromedriver'
+        driver_location = os.getcwd() + "/bin/headless-chromium"
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--window-size=1280x1696')
+        chrome_options.add_argument('--user-data-dir=/tmp/user-data')
+        chrome_options.add_argument('--hide-scrollbars')
+        chrome_options.add_argument('--enable-logging')
+        chrome_options.add_argument('--log-level=0')
+        chrome_options.add_argument('--v=99')
+        chrome_options.add_argument('--single-process')
+        chrome_options.add_argument('--data-path=/tmp/data-path')
+        chrome_options.add_argument('--ignore-certificate-errors')
+        chrome_options.add_argument('--homedir=/tmp')
+        chrome_options.add_argument('--disk-cache-dir=/tmp/cache-dir')
+        chrome_options.add_argument('user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')
+        chrome_options.binary_location = os.getcwd() + "/bin/headless-chromium"
+        driver = webdriver.Chrome(driver_location, options=chrome_options)
         
         return driver
 
@@ -52,15 +68,28 @@ class GoogleReviewScraper:
     # Parse all the available reviews
     def __parse_reviews(self):
         parsed_reviews = []
+        reviews_text = []
+        stars = []
         review_boxes = self.dialog_box.find_elements_by_class_name("Jtu6Td")
-        # review_stars = dialog_box.find_elements_by_xpath("//label[contains(text(),'Rated')]")
+        review_stars = self.dialog_box.find_elements_by_class_name("EBe2gf")
 
         print("nbr of reviews: " + str(len(review_boxes)))
         
         # Get the text of each individual review
         for review in review_boxes:
-            stars = "4"
-            parsed_reviews.append({"stars":stars, "review":review.text})
+            reviews_text.append(review.text)
+
+        for star in review_stars:
+            label = star.get_attribute("aria-label")
+            stars.append(label.split()[1])
+        
+        # Create json type structure
+        for i in range(len(review_boxes)):
+            review_data = {
+                "rating": stars[i],
+                "review": reviews_text[i]
+            }
+            parsed_reviews.append(review_data)
 
         return parsed_reviews
 
@@ -76,6 +105,7 @@ class GoogleReviewScraper:
         self.__get_general_info()
 
         for i in range(self.nbr_of_scrolls):
+            print("scroll nbr: " + str(i))
             self.__scroll()
             time.sleep(SCROLL_REFRESH_TIME)
 
@@ -90,7 +120,7 @@ class GoogleReviewScraper:
             "reviews": reviews,
         }
 
-        driver.quit()
+        self.driver.quit()
 
         return json.dumps(data)
     

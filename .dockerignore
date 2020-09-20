@@ -4,9 +4,9 @@
 *.pyc
 __pycache__/
 env/
-lib/
-bin/
 
-#Docker
-*.zip
+local_lib/
+extension/
 
+#Git
+.git/
