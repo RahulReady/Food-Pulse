@@ -14,8 +14,3 @@ def test10():
 def test11():
     print('222')
     return
-
-
-
-test10()
-test11()

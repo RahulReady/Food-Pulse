@@ -12,23 +12,16 @@ print(os.getcwd())
 
 # Script Imports
 from src.NLP_script import test10, test11
-#from src.scraping_reviews import test1
+from src.scraping_reviews import *
 
 # Following code needed if the Processing Pipeline scripts are updated
 # importlib.reload(src.NLP_script)
 # importlib.reload(src.scraping_reviews)
 
 
-print(test10())
-print(test11())
-
-
-
-
-
-
 
 def lambda_handler(event, context):
+  scrape_reviews(event)
 
   return{
     'body': event
