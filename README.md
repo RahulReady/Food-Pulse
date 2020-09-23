@@ -15,4 +15,9 @@ V-1.0 <br>
 **Future Iterations:**
 1) Store reviews in a db, so you can possibly write once and read many.
 2) Set up 2 lambda functions, one for each process: scraping and NLP.
-3) Possibly look up restaurants for the user to enter and we would take care of the rest. 
+3) Possibly look up restaurants for the user to enter and we would take care of the rest.
+
+**Some great examples:**
+https://github.com/jairovadillo/pychromeless
+https://github.com/vittorio-nardone/selenium-chromium-lambda
+https://github.com/ChristopherDedominici/AWSlambda-python-scraper-generator/tree/master/python-auto-generated-lambda

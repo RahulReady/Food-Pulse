@@ -1,12 +1,13 @@
+# Misc
 .DS_Store
+.vscode/
 
-#Python
+# Python
 *.pyc
 __pycache__/
 env/
-lib/
 bin/
 
-#Docker
+# Packages
 *.zip
 

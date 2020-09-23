@@ -16,13 +16,11 @@ class GoogleReviewScraper:
 
     # Init the driver with chromedriver and related options
     def __get_driver(self):
-        # driver_location = os.getcwd() + '/local_lib/chromedriver'
-        driver_location = os.getcwd() + "/bin/headless-chromium"
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('headless')
+
+        chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_argument('--window-size=1280x1696')
         chrome_options.add_argument('--user-data-dir=/tmp/user-data')
         chrome_options.add_argument('--hide-scrollbars')
         chrome_options.add_argument('--enable-logging')
@@ -33,9 +31,12 @@ class GoogleReviewScraper:
         chrome_options.add_argument('--ignore-certificate-errors')
         chrome_options.add_argument('--homedir=/tmp')
         chrome_options.add_argument('--disk-cache-dir=/tmp/cache-dir')
-        chrome_options.add_argument('user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')
-        chrome_options.binary_location = os.getcwd() + "/bin/headless-chromium"
-        driver = webdriver.Chrome(driver_location, options=chrome_options)
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument(
+            'user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')
+        chrome_options.binary_location = os.getcwd() + "/bin/headless-chromium" 
+        
+        driver = webdriver.Chrome(chrome_options=chrome_options)
         
         return driver
 
@@ -97,6 +98,8 @@ class GoogleReviewScraper:
     def get_reviews(self, url):
         self.driver.implicitly_wait(100)
 
+        print(url)
+
         # Open the specified URL
         self.driver.get(url)
 
@@ -104,10 +107,10 @@ class GoogleReviewScraper:
 
         self.__get_general_info()
 
-        for i in range(self.nbr_of_scrolls):
-            print("scroll nbr: " + str(i))
-            self.__scroll()
-            time.sleep(SCROLL_REFRESH_TIME)
+        # for i in range(self.nbr_of_scrolls):
+        #     print("scroll nbr: " + str(i))
+        #     self.__scroll()
+        #     time.sleep(SCROLL_REFRESH_TIME)
 
         self.__expand_reviews()
 
