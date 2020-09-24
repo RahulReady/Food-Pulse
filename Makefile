@@ -26,11 +26,10 @@ fetch-dependencies:
 # Prepare build.zip archive for AWS Lambda deploy 
 build: clean fetch-dependencies
 	mkdir build build/lib
-	cp -r src build/.
+	cp -r src/* build/.
 	cp -r bin build/.
 	cp -r lib build/.
-	# pip install -r requirements.txt -t build/lib/.
 	cp -r env/lib/python3.8/site-packages/*  build/.
-	cd build; zip -9qr build.zip .
+	cd build; rm -rf __pycache__/ *.dist-info; zip -9qr build.zip .
 	cp build/build.zip .
 	rm -rf build

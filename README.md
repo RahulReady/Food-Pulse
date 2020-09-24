@@ -1,6 +1,5 @@
 # Food-Pulse
 
-
 **Goal:** Obtaining the top 5 best food items (that people like via reviews) for a particular restaurtant. 
 
 **How**: We want a user to be able to open a desired restaurant via google reviews and click an extension icon to generate the top relevant food items.
@@ -18,6 +17,6 @@ V-1.0 <br>
 3) Possibly look up restaurants for the user to enter and we would take care of the rest.
 
 **Some great examples:**
-https://github.com/jairovadillo/pychromeless
-https://github.com/vittorio-nardone/selenium-chromium-lambda
-https://github.com/ChristopherDedominici/AWSlambda-python-scraper-generator/tree/master/python-auto-generated-lambda
+1) https://github.com/jairovadillo/pychromeless
+2) https://github.com/vittorio-nardone/selenium-chromium-lambda
+2) https://github.com/ChristopherDedominici/AWSlambda-python-scraper-generator/tree/master/python-auto-generated-lambda

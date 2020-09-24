@@ -62,7 +62,7 @@ class GoogleReviewScraper:
         self.general_info = {
             "restaurant_name": restaurant_name.text,
             "overall_rating": overall_rating.text,
-            "nbr_of_reviews": nbr_of_reviews.text.split()[0]
+            "nbr_of_reviews": nbr_of_reviews.text.split()[0].replace(",", "")
         }
         self.nbr_of_scrolls = math.ceil( int(self.general_info['nbr_of_reviews']) / REVIEWS_PER_SCROLL )
 
