@@ -23,8 +23,7 @@ function popup() {
       },
     })
     .done( (response) => {
-      console.log(response);
-      chrome.tabs.sendMessage(activeTab.id, response);
+      console.log(response)
       // Todo: add logic to display the response in the extension popup
     });
   
