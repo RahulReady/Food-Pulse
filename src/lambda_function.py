@@ -10,13 +10,13 @@ from review_scraper import *
 # importlib.reload(src.scraping_reviews)
 
 def lambda_handler(event, context):
-  # url = event["params"]["querystring"]["url"]
-  
+  url = event["params"]["querystring"]["url"]
+
   scraper = GoogleReviewScraper()
-  # reviews = scraper.get_reviews(url)
+  reviews = scraper.get_reviews(url)
 
   return{
-    'url': event,
-    # 'reviews': reviews
+    'url': url,
+    'reviews': reviews
   }
   
