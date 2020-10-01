@@ -1,6 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("set").addEventListener("click", popup);
+  document.getElementById("reviews").addEventListener("click", popup);
+});
+
+// Initialize Tabs in Popup
+$(document).ready(function(){
+  $('.tabs').tabs();
 });
 
 function popup() {

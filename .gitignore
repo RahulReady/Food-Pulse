@@ -6,6 +6,7 @@
 *.pyc
 __pycache__/
 env/
+venv/
 bin/
 
 # Packages
