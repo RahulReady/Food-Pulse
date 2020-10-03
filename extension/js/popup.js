@@ -31,6 +31,5 @@ function popup() {
       console.log(response)
       // Todo: add logic to display the response in the extension popup
     });
-  
   });
 }
