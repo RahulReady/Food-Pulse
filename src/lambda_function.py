@@ -12,7 +12,8 @@ from review_scraper import *
 def lambda_handler(event, context):
   url = event["params"]["querystring"]["url"]
 
-  scraper = GoogleReviewScraper()
+  local = False
+  scraper = GoogleReviewScraper(local)
   reviews = scraper.get_reviews(url)
 
   return{
