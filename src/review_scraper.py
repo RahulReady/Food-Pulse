@@ -130,7 +130,7 @@ class GoogleReviewScraper:
 
         self._driver.quit()
         # Saving json files for testing
-        _file = 'src/entity/scrapped_restaurant_reviews/' + self._general_info['restaurant_name'] + '.json'
+        _file = 'src/entity/scrapped_restaurant_reviews/restaurant.json'
         with open(_file,'w') as json_file:
             json.dump(data, json_file)
 
