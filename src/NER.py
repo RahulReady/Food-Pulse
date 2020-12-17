@@ -1,9 +1,6 @@
 # Get rid of comments for prod?
-
-import pandas as pd
 import spacy
-import spacy.displacy as displacy
-from textblob import TextBlob
+#import spacy.displacy as displacy
 import os
 import json
 import string
@@ -84,27 +81,12 @@ class NER:
             print(cnts)
 
     def main(self):
-       self.recognize_words()
-
-
-    def test_function():
         '''
-        Used for testing if this sht works correctly
+        Input: None
+        Output: Runs this class
         '''
-        pass
+        self.recognize_words()
 
 
 if __name__ == '__main__':
-    # print(os.getcwd())
-    test1 = NER(True)
-    test1.main()
-
-
-    # reviews_json = json.loads(os.getcwd() + '/src/entity/scrapped_restaurant_reviews/test.json')
-
-    # with open(os.getcwd() + '/src/entity/scrapped_restaurant_reviews/test.json', 'r') as f:
-    #     contents = json.load(f)
-    #     contents['key5'] = 'test2'
-    #     print(contents)
-    # with open(os.getcwd() + '/src/entity/scrapped_restaurant_reviews/test.json', "w") as outfile:  
-    #     json.dump(contents, outfile)
+    NER(True).main()

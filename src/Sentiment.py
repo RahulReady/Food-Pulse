@@ -112,7 +112,7 @@ class Sentiment(NER):
                 chrome_returned_json['food_items'][key] = value[0]/value[1]
         # print(chrome_returned_json)
         # del chrome_returned_json['food_items']
-        # print(chrome_returned_json)
+        print(chrome_returned_json)
 
 
     def main(self):

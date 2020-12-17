@@ -1,0 +1,293 @@
+{
+  "restaurant_name": "Baba Kabab",
+  "overall_rating": "4.5",
+  "nbr_of_reviews": "72",
+  "reviews": [
+    {
+      "rating": "5.0",
+      "review": "This place deserves a 5 star! I ordered food for take out. The portion size is more than fair for the price. Customer serve was superb! Vegan options are always a plus \ud83d\ude0a thank you!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Excellent food. The tandoori chicken sandwich reminded me of bahn mi, but with Indian flavors instead of Vietnamese. Fries were some of the best I've had and the portion was enormous.",
+      "identified_foods": ["tandoori"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Amazing food and incredibly friendly staff! We had the gyro and chicken seekh sandwiches - really good flavors with tons of fresh veggies. Definitely coming back soon!",
+      "identified_foods": ["gyro", "sandwiches"]
+    },
+    {
+      "rating": "5.0",
+      "review": "I get to eat here a lot since I work right next to it. I like how the customer service is always good and they keep the place well kept all the time. Prices are convenient and they serve sizeable portions.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "This being a new place, we didn't know what to expect. It's small and sparsely decorated but the food was AMAZING. We got the beef plate and lamb plate. Both were juicy, full of rich flavors, and fell apart in your mouth. We'll definitely be going back.",
+      "identified_foods": ["beef", "lamb"]
+    },
+    {
+      "rating": "5.0",
+      "review": "So delicious!! I got the chicken malai  sandwich and it was so filling and tasty. All of the sauces are unreal. Whole family thoroughly enjoyed their food",
+      "identified_foods": ["chicken", "sandwich"]
+    },
+    {
+      "rating": "5.0",
+      "review": "No frills mediterranean place to get some delicious food. inexpensive. Friendly staff!  The spicy chicken is perfect!",
+      "identified_foods": ["no", "chicken"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Picked up food, which was amazing and like the best of middle eastern and south asian flavors mixed. Service was so nice, and the interior was very clean and cute. We got the tandoori chicken kebab sandwich, chicken malai sandwich, and some falafel--would def recommend all of it and will be ordering again. Get extra green zhug-chutney sauce too :')",
+      "identified_foods": ["tandoori", "falafel"]
+    },
+    {
+      "rating": "4.0",
+      "review": "Chicken Gyros were very tasty. Could perhaps be more filling",
+      "identified_foods": []
+    },
+    {
+      "rating": "1.0",
+      "review": "If I could give 0 stars... I ordered food this evening. A mix platter and chicken kebabs. Picked up the food within 35 -40 mins. The good was cold, stale, rice was burnt!! The most tasteless food ever. I\u2019m surprised how is this place even running. The chicken seekh kababs were hard, stale meat and hummus was bitter and HORRIBLE. The salad was watery. I called the restaurant to complain last called UDHAV. Picked up the phone instead of apologizing she kept arguing. She said I can complain where ever I want! Disgusting.. she said the owner SHRIDHAR will call me. Baba kababs is horrible. They ruined our family dinner! Disgusting food ever",
+      "identified_foods": ["chicken", "rice", "chicken", "meat", "salad"]
+    },
+    {
+      "rating": "5.0",
+      "review": "It is a restaurant with a wonderful mood. The chef and staff  are really friendly. Above all, the cuisine is perfect!",
+      "identified_foods": ["cuisine"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Excellent restaurant and best like Somali food, best testing and good staff . thanks I appreciate that baba kabab.",
+      "identified_foods": ["baba"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Great food! Great service!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Flavorful and fresh food that is generous in portion! I got the combo platter. It is not on the menu for some reason but I called and they do have it.  I also ordered their falafel with hummus.  This is my new go to and obsession!",
+      "identified_foods": ["falafel", "hummus"]
+    },
+    {
+      "rating": "1.0",
+      "review": "I will give ZERO stars to the food. KABABs were dry and overcooked. Please, the animal is dead already. Don't burn it to its second death. The cook needs some lesson in making kababs: You need a 80/20 ratio of meat and fat, else your koobideh's will be dry and tasteless. (2) add chopped parsley, red/green pepper to the koobideh. Revisit your butcher or make your own mince. If you need pointers let me know.",
+      "identified_foods": ["meat", "green pepper", "to", "koobideh"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Baba Kabab is a great place for anyone that likes falafels.  The taboulei is great, hummus is great, falafels are great and the service is even better.  The prices are fair and the portions were large.  Highly recommend.",
+      "identified_foods": ["falafels", "hummus"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Amazing food! Ordered the tandoori chicken plate, beef kabab plate with hummus and pita bread...definitely recommend! I'll be ordering again in the future!",
+      "identified_foods": ["tandoori", "beef", "hummus"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Always great been here 4 times",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "This place is pretty good! It's definitely more of a mix of an Indian and Arab place instead of being more of an Arab place. The meat platter and falafel were tasty but the different kinds of meat just had the same overall taste, which it would've rated higher on my taste buds if there was some distinctive flavors instead just one.",
+      "identified_foods": ["meat", "falafel", "meat", "distinctive"]
+    },
+    {
+      "rating": "5.0",
+      "review": "I love this place. The falafels are my favorite. The prices are reasonable and the portions are generous.",
+      "identified_foods": ["falafels"]
+    },
+    {
+      "rating": "1.0",
+      "review": "The food was ok the service was really bad it took about 25min for 2 things",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Good food and great service from the manager.",
+      "identified_foods": []
+    },
+    {
+      "rating": "1.0",
+      "review": "The food was terrible! Never going back!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "I was looking for a middle eastern place near my job and got this place.  I got the chicken with rice, salad, grilled jalape\u00f1o with falafel and hummus.  Food was definitely not all middle eastern, it had an Indian twist to it that I loved!   It was pleasantly delicious.  I wasn\u2019t crazy about there hummus, but it was really good lol  it was a lil pricey, but will worth it they are very generous with there food.  Glad I found this place I like Indian food too.",
+      "identified_foods": ["chicken", "falafel"]
+    },
+    {
+      "rating": "5.0",
+      "review": "They're falafels are AMAZING. I live near the place so i have the amazing advantage of going when ever. 10/10",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "For a kabob take out they are perfect. Don't recommend eating there. The staff are very nice and helpful.",
+      "identified_foods": ["kabob"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Authentic Mediterranean food Thanks",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Fun foods.  Sauces are so yummy.  The lamb sandwich was seriously amazing!  Support your local business, give this place a try - you'll love it!",
+      "identified_foods": ["lamb"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Welcomed Baba Kabab to the location. Had an opportunity to taste their food and it was delicious. Food is seasoned perfectly, well prepared and have a over all great taste. I am excited to have them here and wish them blessings and good fortune...",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Amazing food. Highly recomended place to eat grill and bbq food",
+      "identified_foods": ["bbq"]
+    },
+    {
+      "rating": "4.0",
+      "review": "Did the door dash and didnt get my drink. Also loved everything besides the white rice and peta.",
+      "identified_foods": ["did", "dash", "white rice"]
+    },
+    {
+      "rating": "5.0",
+      "review": "If your looking for a healthy Indian fast food cuisine, and you want to try a great new dining experience, this is the place!!! I had the Tandoori Chicken and it was spot on, entree came out hot, food was flavorful, and this will be my routine lunch spot moving forward. Great job Baba Kabas for bringing fresh, healthy, and tasteful foods to our area!",
+      "identified_foods": ["tandoori"]
+    },
+    {
+      "rating": "5.0",
+      "review": "We are based in the same shopping center; and couldn't wait for them to finally open.  I popped in to say hi and welcome them to the neighborhood.  They came to our door later that day and surprised us with a little sampling of their food.  Falafel, Kebabs, Pitas, Hummus and rice.  Everything was delicious.  Will definitely be coming back for more.  Great to have such nice neighbors.  We wish them all the best!",
+      "identified_foods": ["", "falafel", "hummus"]
+    },
+    {
+      "rating": "5.0",
+      "review": "I love this place, great food.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Seeing as there aren't any good kebab options in the area, I was very happy when I saw Baba Kabab opening up. Ive had the beef kebab platter a few times and it is fantastic! We will definitely be coming back.",
+      "identified_foods": ["seeing", "kebab", "beef"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Food was good, interesting fusion between Indian and Persian food. Great bread and falafel. We had lamb kabob plate and the falafel plate. Both good.\nPrice was fair and worth it. Excellent service.\nSanta recommends it.",
+      "identified_foods": [
+        "persian food",
+        "bread",
+        "falafel",
+        "lamb",
+        "falafel"
+      ]
+    },
+    {
+      "rating": "5.0",
+      "review": "Excellent food, friendly service, reasonable pricing. Will be back!",
+      "identified_foods": []
+    },
+    { "rating": "5.0", "review": "Good taste !", "identified_foods": [] },
+    {
+      "rating": "5.0",
+      "review": "First time trying middle eastern food and i love it. Ordered chicken kabob and its amazing with great spicy  sauce. I highly hope everyone tries Baba Kabob \ud83d\udc4d\ud83d\udc4d\ud83d\udc4d",
+      "identified_foods": ["chicken"]
+    },
+    {
+      "rating": "5.0",
+      "review": "We just visited Baba Kabab at 2711 E. New York St., Aurora & were VERY pleasantly surprised at the wonderful flavors ! The baba ganoush, the lamb kabob plate & the chicken kabob plate were beautifully seasoned with spices !!\nThe cabbage slaw had fresh chopped vegies in it & tasted very good, also !\nWe appreciate good flavor & this place is loaded with it !",
+      "identified_foods": ["new", "baba", "lamb", "chicken", "cabbage"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Delicious food, friendly staff. Recommended",
+      "identified_foods": []
+    },
+    {
+      "rating": "2.0",
+      "review": "We tried Baba Kabob on Monday 10/28/19 at 2:00 pm. We ordered the falafel plate and hummus plate. We dined in. We were the only customers there. There are four tables in the dining area, three were filthy. The floor was also filthy. When the food arrived it was on styrofoam plates. Only one pita came with the hummus plate. The food was good, but the falafel was a bit salty. I will not return because of the dirty condition of the dining area. They were not busy, so there was no excuse for not cleaning the tables and floor. I also was put off by the use of styrofoam plates. I\u2019m so disappointed because I love falafel and want to support local non-chain restaurants. They need to step up their cleaning game!",
+      "identified_foods": ["falafel", "hummus", "hummus", "falafel", "falafel"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Both the lamb and falafel plates were excellent. Large portions that will not send you home hungry.",
+      "identified_foods": ["lamb"]
+    },
+    {
+      "rating": "5.0",
+      "review": "They really have a very delicious kushari",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "Nice falafel",
+      "identified_foods": ["falafel"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Awesome lamb Kabab sand falafel..\nGreat sauces to go with.. Ordered food from Baba Kabab using  Grubhub. Food was delicious and exactly what I ordered.. Thank you and I will recommend Baba Kabab to all my friends..",
+      "identified_foods": ["lamb", "falafel", "grubhub"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Really delicious food, prepared fresh! Would go everyday for takeaway if I lived near!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Saw this place on Uber Eats and decided to give it a try.  I am so glad I did. It was absolutely delicious. My picky son even loved it. He loved the chicken shish kabob and the Naan. I have found a new Go To spot! Highly recommend trying it out.",
+      "identified_foods": ["chicken", "kabob", "naan"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Very delicious food their tandoori is the best in Illinois",
+      "identified_foods": ["tandoori"]
+    },
+    {
+      "rating": "4.0",
+      "review": "Good food and great service!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "I ordered a vegetable falafel plate on Uber eats and I loved it. Great food at an affordable price.",
+      "identified_foods": ["vegetable"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Friendly owners and food is outstanding.\nSo glad they open up the new location.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Had the chicken pita sandwich, it was spicy and flavorful!",
+      "identified_foods": ["chicken"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Awesome people,   delicious food ,\ud83d\udc4c\ud83d\udc4c\ud83d\udc4c\ud83d\udc4c",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Good and healthy food",
+      "identified_foods": []
+    },
+    { "rating": "5.0", "review": "Excellent food", "identified_foods": [] },
+    { "rating": "4.0", "review": "Good food", "identified_foods": [] },
+    {
+      "rating": "1.0",
+      "review": "(Translated by Google) mediocre\n\n(Original)\nMedioker",
+      "identified_foods": []
+    },
+    { "rating": "5.0", "review": "", "identified_foods": [] },
+    { "rating": "5.0", "review": "", "identified_foods": [] }
+  ]
+}
