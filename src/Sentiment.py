@@ -22,13 +22,14 @@ class Sentiment(NER):
     [X] Split sentences and then select sentences that contain the identified words
     [X] Find sentiment of those sentences
     [X] Take a weighted average of sentiment and rating score
-    [] Return the top/worst 3 items
+    [X] Return the top items
+    [] CHECK IF IDENTIFIED WORD IS BLANK AND REMOVE IT
 
 
     @Notes
     1) Given a set of possible food items and it's review scores, how do we determine what to finally use?
     Set a min number of items to be detected? Would this scale based on total reviews?
-    CHECK IF IDENTIFIED WORD IS BLANK AND REMOVE IT
+    
     '''
 
     def __init__(self, sentence_weight, review_weight, threshold):
@@ -110,8 +111,8 @@ class Sentiment(NER):
         for key,value in final_list['food_ratings'].items():
             if value[1] > (self.threshold * max_count):
                 chrome_returned_json['food_items'][key] = value[0]/value[1]
-        # print(chrome_returned_json)
-        # del chrome_returned_json['food_items']
+        
+        # THIS NEEDS TO BE RETURNED IN THE LAMBDA FUNCTION
         print(chrome_returned_json)
 
 
