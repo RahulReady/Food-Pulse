@@ -6,9 +6,12 @@ import json
 import string
 
 
+
 class NER:
     '''
     Class that takes in the reviews (json) and modifies the scraped restaurant json, adding the NER model's recognized food words.
+    @Future
+    1) NeuroNER would be interesting to look into
     '''
     
 

@@ -22,7 +22,7 @@ class Sentiment(NER):
     [X] Split sentences and then select sentences that contain the identified words
     [X] Find sentiment of those sentences
     [X] Take a weighted average of sentiment and rating score
-    [X] Return the top items
+    [] Return the top items to lambda function
     [] CHECK IF IDENTIFIED WORD IS BLANK AND REMOVE IT
 
 
@@ -73,7 +73,7 @@ class Sentiment(NER):
                                     running_total[food_item] = [combined_review_rating, 1]
 
         final_list['food_ratings'] = running_total
-        self.return_best_worst_items(final_list)
+        return(self.return_best_worst_items(final_list))
  
     def get_sentiment(self, sentence):
         '''
@@ -98,7 +98,6 @@ class Sentiment(NER):
         Input: Final list with the food items and their corresponding ratings
         Output: Top/worst food items
         '''
- 
         # print(final_list)
         chrome_returned_json = {'food_items': {}}
         chrome_returned_json['restaurant_name'] = final_list['restaurant_name']
@@ -111,18 +110,16 @@ class Sentiment(NER):
         for key,value in final_list['food_ratings'].items():
             if value[1] > (self.threshold * max_count):
                 chrome_returned_json['food_items'][key] = value[0]/value[1]
-        
-        # THIS NEEDS TO BE RETURNED IN THE LAMBDA FUNCTION
-        print(chrome_returned_json)
-
+        return chrome_returned_json
 
     def main(self):
         '''
         Input: None
         Output: Runs this class
         '''
-        self.sentences_with_identified_words()
+        return (self.sentences_with_identified_words())
 
         
 if __name__ == '__main__':
-    Sentiment(0.3,0.7, 0.2).main()
+    test = Sentiment(0.3,0.7, 0.2).main()
+    print('LESGO', test)

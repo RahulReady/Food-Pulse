@@ -143,6 +143,7 @@ class GoogleReviewScraper:
 if __name__ == "__main__":
     url = 'https://www.google.com/search?sxsrf=ALeKk00sF7Cd7DbPJktAmB3JuY1I8fvWEA:1602444823747&q=local%20restaurants&npsic=0&rflfq=1&rldoc=1&rlha=0&rllag=41777374,-88209195,433&tbm=lcl&sa=X&ved=2ahUKEwjh5_aTpK3sAhXDVs0KHfBWA5IQjGp6BAgNEGI&biw=1440&bih=821&rlfi=hd:;si:&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3american_1restaurant!1m4!1u5!2m2!5m1!1sgcid_3seafood_1restaurant!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!1m4!1u22!2m2!21m1!1e1!2m1!1e5!2m1!1e1!2m1!1e3!2m4!1e2!5m2!2m1!2e9!3sIAEqAlVT,lf:1,lf_ui:9&rlst=f#lrd=0x880ef934af97c5e9:0x8816413c99534c2e,1,,,&rlfi=hd:;si:9806096967172049966,l,ChFsb2NhbCByZXN0YXVyYW50c1ogCgtyZXN0YXVyYW50cyIRbG9jYWwgcmVzdGF1cmFudHM,y,aEKRqBPTJWY;mv:[[41.7972548,-88.14491],[41.7510391,-88.2556199]]'
     
+    
     # Are we running locally or on AWS lambda?
 
     local = True
