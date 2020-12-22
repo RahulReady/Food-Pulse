@@ -9,7 +9,8 @@ import spacy.displacy as displacy
 from textblob import TextBlob
 import os
 from nltk.tokenize import sent_tokenize, word_tokenize
-
+import nltk
+nltk.download('punkt')
 # print(os.getcwd())
 
 

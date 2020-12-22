@@ -147,6 +147,6 @@ if __name__ == "__main__":
     # Are we running locally or on AWS lambda?
 
     local = True
-    reviews = GoogleReviewScraper(local).get_reviews()
+    reviews = GoogleReviewScraper(local).get_reviews(url)
     #print(reviews)
     
