@@ -2,13 +2,29 @@
 
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/popup.css"  media="screen,projection"/>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Import materialize.css -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/popup.css"
+      media="screen,projection"
+    />
   </head>
 
   <body>
@@ -18,51 +34,49 @@
       </div>
     </nav>
 
-    <div class="container"> 
+    <div class="container">
       <div>
         <div class="card">
-
           <div class="card-content">
-            <p>restaurant name</p>
+            <p id="restaurantName">restaurant name</p>
           </div>
 
           <div class="card-tabs">
             <ul class="tabs tabs-fixed-width">
               <li class="tab"><a class="active" href="#best">Best Foods</a></li>
-              <li class="tab"><a href="#worst">Worst Foods</a></li>
             </ul>
           </div>
 
           <div class="card-content grey lighten-4">
             <div id="best">
               <ul class="collection">
-                <li class="collection-item">Best</li>
-                <li class="collection-item">Best</li>
-                <li class="collection-item">Best</li>
-              </ul>
-            </div>
-
-            <div id="worst">
-              <ul class="collection">
-                <li class="collection-item">Worst</li>
-                <li class="collection-item">Worst</li>
-                <li class="collection-item">Worst</li>
+                <li class="collection-item">First</li>
+                <li class="collection-item">Second</li>
+                <li class="collection-item">Third</li>
               </ul>
             </div>
           </div>
 
           <div class="card-action center">
-            <a class="waves-effect waves-light btn"><i id="reviews" class="material-icons right">restaurant</i>Show me what's good!</a>
+            <a id="reviews" class="waves-effect waves-light btn"
+              ><i class="material-icons right">restaurant</i>Show me what's
+              good!</a
+            >
           </div>
-
+          <button id="test">TestButton</button>
+          <div>
+            <h5 id="before">Before encoding</h5>
+          </div>
+          <div>
+            <h5 id="after">After encoding</h5>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Import JS files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/popup.js"></script>
   </body>
-
 </html>
