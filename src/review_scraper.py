@@ -86,6 +86,7 @@ class GoogleReviewScraper:
         for review in review_boxes:
             reviews_text.append(review.text)
 
+
         for star in review_stars:
             label = star.get_attribute("aria-label")
             stars.append(label.split()[1])
@@ -141,12 +142,9 @@ class GoogleReviewScraper:
 
 # print(type(reviews))
 if __name__ == "__main__":
-    url = 'https://www.google.com/search?sxsrf=ALeKk00sF7Cd7DbPJktAmB3JuY1I8fvWEA:1602444823747&q=local%20restaurants&npsic=0&rflfq=1&rldoc=1&rlha=0&rllag=41777374,-88209195,433&tbm=lcl&sa=X&ved=2ahUKEwjh5_aTpK3sAhXDVs0KHfBWA5IQjGp6BAgNEGI&biw=1440&bih=821&rlfi=hd:;si:&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3american_1restaurant!1m4!1u5!2m2!5m1!1sgcid_3seafood_1restaurant!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!1m4!1u22!2m2!21m1!1e1!2m1!1e5!2m1!1e1!2m1!1e3!2m4!1e2!5m2!2m1!2e9!3sIAEqAlVT,lf:1,lf_ui:9&rlst=f#lrd=0x880ef934af97c5e9:0x8816413c99534c2e,1,,,&rlfi=hd:;si:9806096967172049966,l,ChFsb2NhbCByZXN0YXVyYW50c1ogCgtyZXN0YXVyYW50cyIRbG9jYWwgcmVzdGF1cmFudHM,y,aEKRqBPTJWY;mv:[[41.7972548,-88.14491],[41.7510391,-88.2556199]]'
-    
+    url = 'https://www.google.com/search?sxsrf=ALeKk02pAGPH0ueOFtU6Q1Nj1shQfQTyBg:1608654859737&ei=AyDiX_vkOI25tAb1qrAo&q=restaurants%20springfield%20il&oq=restaurants+springfield+il&gs_lcp=CgZwc3ktYWIQAzIFCAAQyQMyAggAMgIIADICCAAyAggAMgIIADICCAAyBggAEBYQHjIGCAAQFhAeMgYIABAWEB46BAgAEEc6BAgjECc6BAgAEEM6DQguELEDEMcBEKMCEEM6CAguEMcBEK8BOggILhDHARCjAjoICAAQsQMQgwE6BwgAELEDEEM6BwgAEBQQhwI6CwguELEDEMcBEKMCOgcIIxDJAxAnOgUIABCSAzoFCAAQsQM6CggAELEDEBQQhwJQlxdYqDRg4TRoAHACeACAAWGIAZoQkgECMjWYAQCgAQGqAQdnd3Mtd2l6yAEIwAEB&sclient=psy-ab&ved=2ahUKEwio-uurguLtAhVaZc0KHaLdB-kQvS4wAHoECAIQQA&uact=5&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3seafood_1restaurant!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!1m4!1u22!2m2!21m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3american_1restaurant!2m1!1e2!2m1!1e5!2m1!1e3!2m4!1e1!5m2!1m1!2u8!3sIAEqAlVT,lf:1,lf_ui:9&tbm=lcl&rflfq=1&num=10&rldimm=7945474418576427725&lqi=ChpyZXN0YXVyYW50cyBzcHJpbmdmaWVsZCBpbEiuhLz95YCAgAhaMQoLcmVzdGF1cmFudHMQABgAGAEYAiIacmVzdGF1cmFudHMgc3ByaW5nZmllbGQgaWw&phdesc=JExN5RlCb2U&rlst=f&rlfi=hd:;si:#lrd=0x887547c2e4df0dab:0x14782efc1922d5fb,1,,,&rlfi=hd:;si:1474980538252187131,l,ChpyZXN0YXVyYW50cyBzcHJpbmdmaWVsZCBpbFopCgtyZXN0YXVyYW50cyIacmVzdGF1cmFudHMgc3ByaW5nZmllbGQgaWw,y,1gGSZQkOuHM;mv:[[39.8394239,-89.60043139999999],[39.6892713,-89.7398781]]'
     
     # Are we running locally or on AWS lambda?
-
     local = True
     reviews = GoogleReviewScraper(local).get_reviews(url)
-    #print(reviews)
     

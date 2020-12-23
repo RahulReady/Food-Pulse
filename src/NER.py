@@ -1,23 +1,16 @@
-# Get rid of comments for prod?
 import spacy
-#import spacy.displacy as displacy
 import os
 import json
 import string
 
-
-
 class NER:
     '''
-    Class that takes in the reviews (json) and modifies the scraped restaurant json, adding the NER model's recognized food words.
-    @Future
-    1) NeuroNER would be interesting to look into
+    Class locates and modifies the restaurant json file (adding the NER model's recognized food words)
     '''
-    
-
-    def __init__(self, test):
+     
+    def __init__(self, test_output):
         self.model = self.spacy_model_setup()
-        self.test = test
+        self.test_output = test_output
 
     def spacy_model_setup(self):
         '''
@@ -27,7 +20,7 @@ class NER:
         model_location = os.getcwd() + '/src/entity/output_dir'
         loaded_model = spacy.load(model_location)  
 
-        # testing to check the model location
+        # Log the model location
         print("Loaded model '%s'" % model_location)
         return loaded_model
 
@@ -38,7 +31,6 @@ class NER:
         '''
         return (os.getcwd() + '/src/entity/scrapped_restaurant_reviews/restaurant.json')
 
-
     def recognize_words(self):
         '''
         Input: None 
@@ -46,35 +38,32 @@ class NER:
         '''
         json_file_path = self.get_restaurant_review_path()
         model = self.model
-        test = self.test
+        test_output = self.test_output
         all_recognized_words = []
         
         with open(json_file_path, 'r') as f:
             contents = json.load(f)
             for ind, val in enumerate(contents['reviews']):
                 review_recognized_words = []
-                # Recognize words  (add displacy???? to test??)
                 # Use the model on the reviews
                 doc = model(val['review'])
 
-                # Recognized words
-                if test:
-                    # Show the model output
-                    [all_recognized_words.append(ent.text.lower().translate(str.maketrans('', '', string.punctuation))) for ent in doc.ents] 
+                # Recognized words (don't add words that are less than or equal to 3 chars)
+                if test_output: # log the output if testing the outputs
+                    [1 if len(ent.text)<=3 else all_recognized_words.append(ent.text.lower().translate(str.maketrans('', '', string.punctuation))) for ent in doc.ents ]
 
                 # Append the words 
-                [review_recognized_words.append(ent.text.lower().translate(str.maketrans('', '', string.punctuation))) for ent in doc.ents]
-
-                # print('Entities', [review_recognized_words.append(ent.text.lower().translate(str.maketrans('', '', string.punctuation))) for ent in doc.ents])
+                [1 if len(ent.text)<=3 else review_recognized_words.append(ent.text.lower().translate(str.maketrans('', '', string.punctuation))) for ent in doc.ents ]
+                
+                # Add the words to the json
                 contents['reviews'][ind]['identified_foods'] = review_recognized_words
-
 
         # Writing the relevant information to the existing restaurant.json file
         with open(json_file_path, 'w') as outfile:  
             json.dump(contents, outfile) 
         
         # Printing counts of the words that the model recognizes
-        if test:
+        if test_output:
             cnts = {} 
             for val in all_recognized_words:
                 if val in cnts:
@@ -83,13 +72,6 @@ class NER:
                     cnts[val] = 1
             print(cnts)
 
-    def main(self):
-        '''
-        Input: None
-        Output: Runs this class
-        '''
-        self.recognize_words()
-
-
 if __name__ == '__main__':
-    NER(True).main()
+
+    NER(True).recognize_words()
