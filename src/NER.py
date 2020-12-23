@@ -1,13 +1,10 @@
+from helper_functions import get_restaurant_review_path
 import spacy
 import os
 import json
 import string
 
-class NER:
-    '''
-    Class locates and modifies the restaurant json file (adding the NER model's recognized food words)
-    '''
-     
+class NER: 
     def __init__(self, test_output):
         self.model = self.spacy_model_setup()
         self.test_output = test_output
@@ -24,19 +21,12 @@ class NER:
         print("Loaded model '%s'" % model_location)
         return loaded_model
 
-    def get_restaurant_review_path(self):
-        '''
-        Input: None 
-        Output: Return the location of the restaurant reviews
-        '''
-        return (os.getcwd() + '/src/entity/scrapped_restaurant_reviews/restaurant.json')
-
     def recognize_words(self):
         '''
         Input: None 
         Output: Return the modified json to be sent for sentiment analysis
         '''
-        json_file_path = self.get_restaurant_review_path()
+        json_file_path = get_restaurant_review_path()
         model = self.model
         test_output = self.test_output
         all_recognized_words = []

@@ -1,48 +1,23 @@
-# Get rid of comments for prod?
-
-# Confused that pylint is throwing an error, but it works!? LOOK INTO THIS
-from NER import NER
-import pandas as pd
-import spacy
+from ner import NER
+from helper_functions import get_restaurant_review_path
 import json
-import spacy.displacy as displacy
+import math
 from textblob import TextBlob
-import os
 from nltk.tokenize import sent_tokenize, word_tokenize
 import nltk
 nltk.download('punkt')
-# print(os.getcwd())
 
-
-class Sentiment(NER):
-    '''
-    Input: None
-    Output: Class for returning the X best/worst food items.
-    #TODO
-    [X] Read in json file 
-    [X] Split sentences and then select sentences that contain the identified words
-    [X] Find sentiment of those sentences
-    [X] Take a weighted average of sentiment and rating score
-    [] Return the top items to lambda function
-    [] CHECK IF IDENTIFIED WORD IS BLANK AND REMOVE IT
-
-
-    @Notes
-    1) Given a set of possible food items and it's review scores, how do we determine what to finally use?
-    Set a min number of items to be detected? Would this scale based on total reviews?
-    
-    '''
-
+class Sentiment:
     def __init__(self, sentence_weight, review_weight, threshold):
-        self.path = self.get_restaurant_review_path()
+        self.path = get_restaurant_review_path()
         self.sentence_weight = sentence_weight
         self.review_weight = review_weight
         self.threshold = threshold
 
-    def sentences_with_identified_words(self):
+    def calculate_final_json(self):
         '''
         Input: None
-        Output: Returns the final json that contains the food rating sentiment for each identified food word
+        Output: Returns the final json of food items and their corresponding sentiment and nbr of occurrances
         '''
         # Read in json file
         with open(self.path, 'r') as f:
@@ -63,18 +38,23 @@ class Sentiment(NER):
                        # Checks if the identified foods occurs in the current sentence.
                         for food_item in single_review['identified_foods']:
                             if food_item in sent:
+                                # Sentiment calculations
                                 if food_item in running_total:
                                     # Update sentiment, count
-                                    combined_review_rating = self.get_weighted_average(float(review_rating), float(self.get_sentiment(sent)))
-                                    running_total[food_item][0] = running_total[food_item][0] + combined_review_rating
+                                    running_total[food_item][0] = (running_total[food_item][0] + float(self.get_sentiment(sent))) / (running_total[food_item][1] + 1)
                                     running_total[food_item][1] = running_total[food_item][1] + 1
                                 else:
                                     # Initialize sentiment, count 
-                                    combined_review_rating = self.get_weighted_average(float(review_rating), float(self.get_sentiment(sent))) 
+                                    combined_review_rating = float(self.get_sentiment(sent))
                                     running_total[food_item] = [combined_review_rating, 1]
+                
+                # Update the weighted avg for all items in the review
+                for key in running_total.keys():
+                    running_total[key][0] = self.get_weighted_average(float(review_rating), running_total[key][0]) 
 
         final_list['food_ratings'] = running_total
-        return(self.return_best_worst_items(final_list))
+        print('FINAL LIST NO PROCESSING:', final_list)
+        return(self.return_top_food_items(final_list))
  
     def get_sentiment(self, sentence):
         '''
@@ -88,39 +68,30 @@ class Sentiment(NER):
         Input: review_rating, and sentiment score
         Output: Returns the weighted average of the review rating and the sentiment score
         '''
-        # Need to normalize the review rating between -1 and 1 (Would probably be slightly faster to just make this a hash table?) 
+        # Normalize the review rating between -1 and 1 
         normalized_review_rating = 2*((review_rating - 1)/(5-1))-1 # Formula: 2 * ((x - min(x))/(max(x)-max(x)))-1
         
         # Multiply by the respective weights and return the weighted average
-        return (self.sentence_weight*sentiment) + (self.review_weight*normalized_review_rating) 
+        return (self.sentence_weight * sentiment) + (self.review_weight * normalized_review_rating) 
 
-    def return_best_worst_items(self, final_list):
+    def return_top_food_items(self, final_list):
         '''
         Input: Final list with the food items and their corresponding ratings
-        Output: Top/worst food items
+        Output: Food items along with their sentiment and counts
         '''
-        # print(final_list)
-        chrome_returned_json = {'food_items': {}}
+        chrome_returned_json = {"food_items": {} }
         chrome_returned_json['restaurant_name'] = final_list['restaurant_name']
 
-        # Count max number of reviews and check if count > threshold?
         # Find max number of identified words for a single food item
         max_count = max([val[1] for val in final_list['food_ratings'].values()])
-        
+
+        print("\nCLEANING THRESHOLDS")
         # Check if number of times a food is identified is greater than a threshold
         for key,value in final_list['food_ratings'].items():
-            if value[1] > (self.threshold * max_count):
-                chrome_returned_json['food_items'][key] = value[0]/value[1]
+            if value[1] > math.ceil(self.threshold * max_count):
+                chrome_returned_json['food_items'][key] = value
         return chrome_returned_json
-
-    def main(self):
-        '''
-        Input: None
-        Output: Runs this class
-        '''
-        return (self.sentences_with_identified_words())
-
         
 if __name__ == '__main__':
-    test = Sentiment(0.3,0.7, 0.2).main()
-    print('LESGO', test)
+    test = Sentiment(0.5,0.5, 0.2).calculate_final_json()
+    print(test)
