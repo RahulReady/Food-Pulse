@@ -5,11 +5,14 @@ import math
 from textblob import TextBlob
 from nltk.tokenize import sent_tokenize, word_tokenize
 import nltk
-nltk.download('punkt')
+# nltk.download('punkt') # local
+nltk.data.path.append("/tmp")
+nltk.download("punkt", download_dir = "/tmp")
 
 class Sentiment:
-    def __init__(self, sentence_weight, review_weight, threshold):
+    def __init__(self, reviews, sentence_weight, review_weight, threshold):
         self.path = get_restaurant_review_path()
+        self.reviews = reviews
         self.sentence_weight = sentence_weight
         self.review_weight = review_weight
         self.threshold = threshold
@@ -19,38 +22,39 @@ class Sentiment:
         Input: None
         Output: Returns the final json of food items and their corresponding sentiment and nbr of occurrances
         '''
-        # Read in json file
-        with open(self.path, 'r') as f:
-            contents = json.load(f)
-            final_list = {"restaurant_name": contents['restaurant_name'], "food_ratings": None}
-            running_total = {}
-            for single_review in contents['reviews']:
-                review_rating = single_review['rating']
+        # Read in reviews
+        contents = self.reviews
+    # with open(self.path, 'r') as f:
+    #     contents = json.load(f)
+        final_list = {"restaurant_name": contents['restaurant_name'], "food_ratings": None}
+        running_total = {}
+        for single_review in contents['reviews']:
+            review_rating = single_review['rating']
 
-                # If no foods, skip!
-                if len(single_review['identified_foods']) == 0:
-                    continue
-                else:
-                    # Tokenize sentences (God bless nltk)
-                    split_sentences = sent_tokenize(single_review['review'])
+            # If no foods, skip!
+            if len(single_review['identified_foods']) == 0:
+                continue
+            else:
+                # Tokenize sentences (God bless nltk)
+                split_sentences = sent_tokenize(single_review['review'])
 
-                    for sent in split_sentences:
-                       # Checks if the identified foods occurs in the current sentence.
-                        for food_item in single_review['identified_foods']:
-                            if food_item in sent:
-                                # Sentiment calculations
-                                if food_item in running_total:
-                                    # Update sentiment, count
-                                    running_total[food_item][0] = (running_total[food_item][0] + float(self.get_sentiment(sent))) / (running_total[food_item][1] + 1)
-                                    running_total[food_item][1] = running_total[food_item][1] + 1
-                                else:
-                                    # Initialize sentiment, count 
-                                    combined_review_rating = float(self.get_sentiment(sent))
-                                    running_total[food_item] = [combined_review_rating, 1]
-                
-                # Update the weighted avg for all items in the review
-                for key in running_total.keys():
-                    running_total[key][0] = self.get_weighted_average(float(review_rating), running_total[key][0]) 
+                for sent in split_sentences:
+                    # Checks if the identified foods occurs in the current sentence.
+                    for food_item in single_review['identified_foods']:
+                        if food_item in sent:
+                            # Sentiment calculations
+                            if food_item in running_total:
+                                # Update sentiment, count
+                                running_total[food_item][0] = (running_total[food_item][0] + float(self.get_sentiment(sent))) / (running_total[food_item][1] + 1)
+                                running_total[food_item][1] = running_total[food_item][1] + 1
+                            else:
+                                # Initialize sentiment, count 
+                                combined_review_rating = float(self.get_sentiment(sent))
+                                running_total[food_item] = [combined_review_rating, 1]
+            
+            # Update the weighted avg for all items in the review
+            for key in running_total.keys():
+                running_total[key][0] = self.get_weighted_average(float(review_rating), running_total[key][0]) 
 
         final_list['food_ratings'] = running_total
         print('FINAL LIST NO PROCESSING:', final_list)

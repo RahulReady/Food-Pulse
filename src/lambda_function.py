@@ -1,45 +1,18 @@
-import sys, os
-'''
-@Notes
-1) To run this, just replace url with the restaurant you want.
-
-@TODO
-[] Make sure only the used packages are uploaded (refresh the requirements)
-'''
 # Class imports
 from review_scraper import GoogleReviewScraper
-from sentiment import Sentiment
-from ner import NER
 import time
+import boto3
+import json
 
-
-
-
-
+client = boto3.client('lambda') 
+print('works')
 
 def lambda_handler(event, context):
-  # url = event["params"]["querystring"]["url"]
-  start = time.time()
-
+  url = 'https://www.google.com/search?sxsrf=ALeKk00eGwQ9r0qW4pRfPShRnayVy_9Qwg:1608741576150&ei=q3LjX9z2NdC0tQbrnaGQDA&q=restaurants%20springfield&tbs=lrf:!1m4!1u5!3m2!5m1!1sgcid_3american_1restaurant!1m4!1u3!2m2!3m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3italian_1restaurant!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!1m4!1u22!2m2!21m1!1e1!2m1!1e2!2m1!1e1!2m1!1e3!2m1!1e5!3sIAEqAlVT,lf:1,lf_ui:9&tbm=lcl&rflfq=1&num=10&rldimm=10387104384240500369&lqi=ChdyZXN0YXVyYW50cyBzcHJpbmdmaWVsZEi9nuel8qyAgAhaOgoXcmVzdGF1cmFudHMgc3ByaW5nZmllbGQQABABGAAYASIXcmVzdGF1cmFudHMgc3ByaW5nZmllbGSaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUnpjM1pEUTFwM0VBRQ&phdesc=zna5f1-QV7I&ved=2ahUKEwjj1LmxxeTtAhXdAp0JHdrKCpYQvS4wAnoECAIQWg&rlst=f&rlfi=hd:;si:#lrd=0x887547d645565aa7:0x7c97b16249ca0690,1,,,&rlfi=hd:;si:8977839417889261200,l,ChdyZXN0YXVyYW50cyBzcHJpbmdmaWVsZFo4ChRhbWVyaWNhbiByZXN0YXVyYW50cyIgYW1lcmljYW4gcmVzdGF1cmFudHMgc3ByaW5nZmllbGQ;mv:[[39.821890599999996,-89.5977458],[39.7091394,-89.73139990000001]]'
   local = False
-  url = 'https://www.google.com/search?sxsrf=ALeKk00TFMQUFMP0MHhLO5XNq815N0Fs7g:1608672043405&q=saravana%20bhavan%20nyc&sa=X&ved=2ahUKEwjw09OtwuLtAhUQB50JHcORDusQvS4wAXoECAEQJQ&biw=1440&bih=821&dpr=2&tbs=lf:1,lf_ui:4&tbm=lcl&rflfq=1&num=10&rldimm=3279191070432345557&lqi=ChNzYXJhdmFuYSBiaGF2YW4gbnljIgOIAQFIvMy5huaAgIAIWi4KD3NhcmF2YW5hIGJoYXZhbhAAEAEYARgCIhNzYXJhdmFuYSBiaGF2YW4gbnljmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU13WDFrM2VVTjNFQUU&rlst=f#lrd=0x89c25888a5e913a9:0x2d8206e797c0bdd5,1,,,&rlfi=hd:;si:3279191070432345557,l,ChNzYXJhdmFuYSBiaGF2YW4gbnljIgOIAQFIvMy5huaAgIAIWi4KD3NhcmF2YW5hIGJoYXZhbhAAEAEYARgCIhNzYXJhdmFuYSBiaGF2YW4gbnljmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU13WDFrM2VVTjNFQUU;mv:[[40.7861119,-73.9774333],[40.7388926,-73.983409]]'
-  GoogleReviewScraper(local).get_reviews(url)
+  reviews = GoogleReviewScraper(local).get_reviews(url)
+  # return reviews
+  response = client.invoke(FunctionName='', InvocationType='RequestResponse', Payload=reviews)
+  responseJson = json.load(response['Payload'])
+  return responseJson
 
-  NER(False).recognize_words() # recognize the words
-  final_json = Sentiment(0.5,0.5, 0.2).calculate_final_json() # return the top words
-  end = time.time()
-  print('time taken', end - start)
-  print(final_json)
-  # return{
-  #   'url': url,
-  #   'reviews': reviews
-  # }
-
-print('test')
-
-# local = True
-# url = 'https://www.google.com/search?sxsrf=ALeKk00TFMQUFMP0MHhLO5XNq815N0Fs7g:1608672043405&q=saravana%20bhavan%20nyc&sa=X&ved=2ahUKEwjw09OtwuLtAhUQB50JHcORDusQvS4wAXoECAEQJQ&biw=1440&bih=821&dpr=2&tbs=lf:1,lf_ui:4&tbm=lcl&rflfq=1&num=10&rldimm=3279191070432345557&lqi=ChNzYXJhdmFuYSBiaGF2YW4gbnljIgOIAQFIvMy5huaAgIAIWi4KD3NhcmF2YW5hIGJoYXZhbhAAEAEYARgCIhNzYXJhdmFuYSBiaGF2YW4gbnljmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU13WDFrM2VVTjNFQUU&rlst=f#lrd=0x89c25888a5e913a9:0x2d8206e797c0bdd5,1,,,&rlfi=hd:;si:3279191070432345557,l,ChNzYXJhdmFuYSBiaGF2YW4gbnljIgOIAQFIvMy5huaAgIAIWi4KD3NhcmF2YW5hIGJoYXZhbhAAEAEYARgCIhNzYXJhdmFuYSBiaGF2YW4gbnljmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU13WDFrM2VVTjNFQUU;mv:[[40.7861119,-73.9774333],[40.7388926,-73.983409]]'
-# GoogleReviewScraper(local).get_reviews(url)
-# NER(False).recognize_words() # recognize the words
-# final_json = Sentiment(0.5,0.5, 0.2).calculate_final_json() # return the top words
-# print(final_json)
