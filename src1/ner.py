@@ -1,4 +1,4 @@
-from helper_functions import get_restaurant_review_path
+# from helper_functions import get_restaurant_review_path
 import spacy
 import os
 import json
@@ -27,7 +27,7 @@ class NER:
         Input: None 
         Output: Return the modified json to be sent for sentiment analysis
         '''
-        json_file_path = get_restaurant_review_path()
+        # json_file_path = get_restaurant_review_path()
         model = self.model
         test_output = self.test_output
         all_recognized_words = []

@@ -35,6 +35,18 @@ build: clean fetch-dependencies
 	cp build/build.zip .
 	rm -rf build
 
+build-ner: clean
+	mkdir build build/src
+	cp -r src1/* build/.
+	mv build/entity build/src
+	# cp -r bin build/.
+	# cp -r lib build/.
+	# cp -r env/lib/python3.8/site-packages/*  build/.
+	# pip3 install -r requirements-scraper.txt -t build/.
+	cd build; zip -9qr build.zip .
+	cp build/build.zip .
+	rm -rf build
+
 docker-build:		## create Docker image
 	docker-compose build
 

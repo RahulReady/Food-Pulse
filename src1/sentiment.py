@@ -1,5 +1,5 @@
 from ner import NER
-from helper_functions import get_restaurant_review_path
+# from helper_functions import get_restaurant_review_path
 import json
 import math
 from textblob import TextBlob
@@ -11,7 +11,7 @@ nltk.download("punkt", download_dir = "/tmp")
 
 class Sentiment:
     def __init__(self, reviews, sentence_weight, review_weight, threshold):
-        self.path = get_restaurant_review_path()
+        # self.path = get_restaurant_review_path()
         self.reviews = reviews
         self.sentence_weight = sentence_weight
         self.review_weight = review_weight
@@ -57,7 +57,7 @@ class Sentiment:
                 running_total[key][0] = self.get_weighted_average(float(review_rating), running_total[key][0]) 
 
         final_list['food_ratings'] = running_total
-        print('FINAL LIST NO PROCESSING:', final_list)
+        # print('FINAL LIST NO PROCESSING:', final_list)
         return(self.return_top_food_items(final_list))
  
     def get_sentiment(self, sentence):
@@ -89,7 +89,7 @@ class Sentiment:
         # Find max number of identified words for a single food item
         max_count = max([val[1] for val in final_list['food_ratings'].values()])
 
-        print("\nCLEANING THRESHOLDS")
+        # print("\nCLEANING THRESHOLDS")
         # Check if number of times a food is identified is greater than a threshold
         for key,value in final_list['food_ratings'].items():
             if value[1] > math.ceil(self.threshold * max_count):

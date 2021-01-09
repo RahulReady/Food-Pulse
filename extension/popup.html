@@ -28,55 +28,44 @@
   </head>
 
   <body>
-    <nav>
+    <nav class="pink accent-3">
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">Logo</a>
       </div>
     </nav>
 
     <div class="container">
-      <div>
-        <div class="card">
-          <div class="card-content">
-            <p id="restaurantName">restaurant name</p>
+      <h4 class="header center">Restaurant name</h4>
+      <h3 id="restaurantName" class="center"></h3>
+      <!-- <div id="message">Injecting Script....</div> -->
+      <div id="results-anchor">
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab">Top Foods</li>
+          </ul>
+        </div>
+        <div class="card-content grey lighten-4">
+          <div id="best">
+            <ul class="collection" id="food-item-list"></ul>
           </div>
-
-          <div class="card-tabs">
-            <ul class="tabs tabs-fixed-width">
-              <li class="tab"><a class="active" href="#best">Best Foods</a></li>
-            </ul>
-          </div>
-
-          <div class="card-content grey lighten-4">
-            <div id="best">
-              <ul class="collection">
-                <li class="collection-item">First</li>
-                <li class="collection-item">Second</li>
-                <li class="collection-item">Third</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card-action center">
-            <a id="reviews" class="waves-effect waves-light btn"
-              ><i class="material-icons right">restaurant</i>Show me what's
-              good!</a
-            >
-          </div>
-          <!-- <button id="test">TestButton</button>
-          <div>
-            <h5 id="before">Before encoding</h5>
-          </div>
-          <div>
-            <h5 id="after">After encoding</h5>
-          </div> -->
         </div>
       </div>
+      <!-- <button id="test">TestButton</button> -->
+      <div class="card-action center">
+        <a id="reviews" class="waves-effect waves-light btn"
+          ><i class="material-icons right">restaurant</i>Show me what's good!</a
+        >
+      </div>
     </div>
-
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
     <!-- Import JS files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/popup.js"></script>
+    <script type="text/javascript" src="materialize.min.js"></script>
+    <!-- <script src="popup.js"></script> -->
+    <script src="bundle.js"></script>
+
+    <!-- <script src="bundle.js"></script> -->
   </body>
 </html>

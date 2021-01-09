@@ -1,9 +1,11 @@
 # Misc
 .DS_Store
-.vscode/
+bundle.js
 .vscode/*
 chromedriver
 scraped_restaurants/
+node_modules/
+secrets.txt
 
 # Python
 *.pyc
