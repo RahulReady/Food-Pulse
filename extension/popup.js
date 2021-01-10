@@ -71,9 +71,23 @@ function tests(food_items) {
   var elements = document.getElementById("food-item-list");
   for (const [key, value] of Object.entries(apiResult["food_items"])) {
     var food = key;
+
+    var sentences = value[2];
+    sentences.map( (sent) => {
+      return "' " + sent + " '";
+    }).join('\n');
+
     var list_item = document.createElement("li");
-    list_item.className = "collection-item";
-    list_item.textContent = food;
+    var div1 = document.createElement("div");
+    div1.className = "collapsible-header";
+    div1.textContent = food;
+
+    var div2 = document.createElement("div");
+    div2.className = "collapsible-body";
+    div2.textContent = sentences;
+
+    list_item.appendChild(div1);
+    list_item.appendChild(div2);
     elements.appendChild(list_item);
   }
 }
@@ -84,7 +98,7 @@ function callLambdaFunction() {
     let url = tabs[0].url;
     url = encodeURI(url);
     // console.log(url);
-
+ 
     // let url = "bleh";
     const main = async () => {
       // http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html

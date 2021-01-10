@@ -42,6 +42,7 @@ class Sentiment:
                     # Checks if the identified foods occurs in the current sentence.
                     for food_item in single_review['identified_foods']:
                         if food_item in sent:
+                            running_total[food_item][2].append(sent)
                             # Sentiment calculations
                             if food_item in running_total:
                                 # Update sentiment, count
