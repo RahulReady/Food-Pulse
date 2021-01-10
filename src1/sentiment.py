@@ -1,9 +1,18 @@
 from ner import NER
-# from helper_functions import get_restaurant_review_path
+from helper_functions import get_restaurant_review_path
 import json
 import math
 from textblob import TextBlob
 from nltk.tokenize import sent_tokenize, word_tokenize
+# import ssl
+
+# try:
+#     _create_unverified_https_context = ssl._create_unverified_context
+# except AttributeError:
+#     pass
+# else:
+#     ssl._create_default_https_context = _create_unverified_https_context
+
 import nltk
 # nltk.download('punkt') # local
 nltk.data.path.append("/tmp")
@@ -24,8 +33,8 @@ class Sentiment:
         '''
         # Read in reviews
         contents = self.reviews
-    # with open(self.path, 'r') as f:
-    #     contents = json.load(f)
+        # with open(self.path, 'r') as f:
+        #     contents = json.load(f)
         final_list = {"restaurant_name": contents['restaurant_name'], "food_ratings": None}
         running_total = {}
         for single_review in contents['reviews']:
@@ -40,18 +49,19 @@ class Sentiment:
 
                 for sent in split_sentences:
                     # Checks if the identified foods occurs in the current sentence.
-                    for food_item in single_review['identified_foods']:
+                    for food_item in set(single_review['identified_foods']):
                         if food_item in sent:
-                            running_total[food_item][2].append(sent)
                             # Sentiment calculations
                             if food_item in running_total:
                                 # Update sentiment, count
                                 running_total[food_item][0] = (running_total[food_item][0] + float(self.get_sentiment(sent))) / (running_total[food_item][1] + 1)
                                 running_total[food_item][1] = running_total[food_item][1] + 1
+                                running_total[food_item][2].append([sent,single_review["rating"]] )
                             else:
                                 # Initialize sentiment, count 
                                 combined_review_rating = float(self.get_sentiment(sent))
-                                running_total[food_item] = [combined_review_rating, 1]
+                                running_total[food_item] = [combined_review_rating, 1, [["",""]]]
+                                running_total[food_item][2][0] = [sent,single_review["rating"]]
             
             # Update the weighted avg for all items in the review
             for key in running_total.keys():

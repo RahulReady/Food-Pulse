@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.onload = onWindowLoad;
 
   $(document).ready(function () {
+    $(".collapsible").collapsible();
     $("#results-anchor").hide();
     $(".loader-wrapper").show().delay(1000).hide();
 
@@ -73,9 +74,7 @@ function tests(food_items) {
     var food = key;
 
     var sentences = value[2];
-    sentences.map( (sent) => {
-      return "' " + sent + " '";
-    }).join('\n');
+    console.log(sentences);
 
     var list_item = document.createElement("li");
     var div1 = document.createElement("div");
@@ -83,11 +82,17 @@ function tests(food_items) {
     div1.textContent = food;
 
     var div2 = document.createElement("div");
+    for (let i = 0; i < sentences.length; i++) {
+      var sentence = document.createElement("p");
+      sentence.textContent = sentences[i];
+      div2.appendChild(sentence);
+      var space = document.createElement("br");
+      div2.appendChild(space);
+    }
     div2.className = "collapsible-body";
-    div2.textContent = sentences;
-
     list_item.appendChild(div1);
     list_item.appendChild(div2);
+
     elements.appendChild(list_item);
   }
 }
@@ -98,18 +103,19 @@ function callLambdaFunction() {
     let url = tabs[0].url;
     url = encodeURI(url);
     // console.log(url);
- 
+
     // let url = "bleh";
     const main = async () => {
       // http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html
       AWS.config.update({
         // public facing key that has no permissions except invoking the main lambda function
-        accessKeyId: "",
-        secretAccessKey: "",
-        region: "",
+        accessKeyId: "AKIAXIC75SF5YFYQM5RT",
+        secretAccessKey: "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",
+        region: "us-east-1",
       });
       const params = {
-        FunctionName: "",
+        FunctionName:
+          "arn:aws:lambda:us-east-1:498417373563:function:review-scraper",
         Payload: JSON.stringify({
           params: {
             querystring: {
