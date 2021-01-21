@@ -2,15 +2,23 @@
   "manifest_version": 2,
 
   "name": "Food Pulse",
-  "version": "2.1",
-  "description": "Gets information from Google Reviews.",
-
+  "version": "1.0.0",
+  "description": "Gets the top food items from a restaurant's Google Reviews.",
+  "icons": { "48": "icon48.png", "128": "icon128.png" },
   "browser_action": {
     "default_popup": "popup.html"
   },
+<<<<<<< HEAD
 
+=======
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+>>>>>>> d9d3b39... logos + message edits
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://fonts.googleapis.com/; object-src 'self'",
-
   "permissions": [
     "tabs",
     "activeTab",

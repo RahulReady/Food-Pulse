@@ -2,6 +2,15 @@
 .DS_Store
 .vscode/
 .vscode/*
+<<<<<<< HEAD
+=======
+chromedriver
+scraped_restaurants/
+node_modules/
+secrets.js
+gif/
+*.png
+>>>>>>> d9d3b39... logos + message edits
 
 # Python
 *.pyc
