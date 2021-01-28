@@ -7,6 +7,9 @@ node_modules/
 secrets.js
 gif/
 *.png
+package-lock.json
+package.json
+bundle.js
 
 # Python
 *.pyc
