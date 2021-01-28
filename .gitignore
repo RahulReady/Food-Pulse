@@ -1,4 +1,4 @@
-# Misc
+# Misc stuff
 .DS_Store
 .vscode/*
 chromedriver
@@ -7,7 +7,7 @@ node_modules/
 secrets.js
 gif/
 *.png
-package-lock.json
+extension/package-lock.json
 package.json
 bundle.js
 
