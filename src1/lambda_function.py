@@ -9,11 +9,10 @@ def lambda_handler(event, context):
   return final_json
 
 if __name__ == "__main__":
-  json_file_path = os.getcwd() + '/src/entity/scrapped_restaurant_reviews/restaurant.json'
+  json_file_path = os.getcwd() + '/src1/entity/scrapped_restaurant_reviews/restaurant.json'
   with open(json_file_path, 'r') as f:
     contents = json.load(f)
   final = lambda_handler(contents, 1)
   print(final)
-
   # print(type(contents))
 
