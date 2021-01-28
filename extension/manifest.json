@@ -8,22 +8,16 @@
   "browser_action": {
     "default_popup": "popup.html"
   },
-<<<<<<< HEAD
-
-=======
   "content_scripts": [
     {
       "matches": ["https://www.google.com/*"],
       "js": ["content.js"]
     }
   ],
->>>>>>> d9d3b39... logos + message edits
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://fonts.googleapis.com/; object-src 'self'",
   "permissions": [
     "tabs",
-    "activeTab",
     "https://*.google.com/*",
-    "https://*.googleapis.com/*",
-    "https://*.execute-api.us-east-2.amazonaws.com/*"
+    "https://*.googleapis.com/*"
   ]
 }

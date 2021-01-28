@@ -1,0 +1,503 @@
+{
+  "restaurant_name": "Chadito's Mexican American Grill",
+  "overall_rating": "4.5",
+  "nbr_of_reviews": "184",
+  "reviews": [
+    {
+      "rating": "3.0",
+      "review": "Prices were a bit high and our drinks were wrong.. we asked for light ice and got a ton of ice. The ice thing wasn't a big deal but 30 bucks for a cheese burger 3 tacos a order of chips and salsa that was a very tiny cup.of salsa and about 10 chips and our 2 large drinks was a bit ridiculous...however the food.tasted great",
+      "identified_foods": ["burger", "tacos", "chips", "cupof", "chips"]
+    },
+    {
+      "rating": "5.0",
+      "review": "I know there are many reasons why Chadito\u2019s is a tasty place to grab your grub, but the fries rank way up there for me.",
+      "identified_foods": []
+    },
+    {
+      "rating": "1.0",
+      "review": "Worst burrito I have ever had, I don't know how they could even call it a burrito. Wouldn't be that mad about it except the fact that it was so pricey for such flavorless food. Would have been better off just going to TBell...",
+      "identified_foods": ["burrito", "burrito"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Seriously,  the best chips and cheese!! The owner is an absolutely amazing individual,  who does alot for the people in Springfield.  #SupportLocal",
+      "identified_foods": ["chips"]
+    },
+    {
+      "rating": "4.0",
+      "review": "Fast service good food! A little expensive for taxo type place but 100% better than Taco Bell!!",
+      "identified_foods": ["taco"]
+    },
+    {
+      "rating": "3.0",
+      "review": "Service was fast and friendly, and the prices were reasonable. But the food was odd. Their seasoned taco meat is very sweet, which was unexpected and not at all what I wanted. Maybe it's because I moved from TX, but this was not Mexican or TexMex food. It's kind of its own thing, so if you're in the mood for something more like TexMex, I would not recommend Chadito's.",
+      "identified_foods": ["taco"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Excellent pork tenderloin and fries still hot when I got home!! I've had nachos and their cheeseburger, each one delicious and good size helpings! Highly recommended",
+      "identified_foods": ["pork", "nachos"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Excellent food, ice cream and service. My 1st time there. I will definitely return.",
+      "identified_foods": ["ice cream"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Excellent customer service!! The food was excellent!! Prices slightly high,but worth it!!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Their fish tacos are delicious. Service is a bit slow bc everything is made to order, so don't be in a big hurry... worth the wait.",
+      "identified_foods": ["fish"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Tasty! I always get the veggie quesadilla.",
+      "identified_foods": ["quesadilla"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Good food, fast service, friendly staff.",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "Fish tacos are the best!",
+      "identified_foods": ["fish tacos"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Amazing food quality, and a great selection of choices!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Great food. Highly recommend",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "Delicious! Lots of menu choices. Love their hot sauce (sweet ketchup base). Fiesta Bean Enchilada (or burrito)...yum! My only disappointment is the soft drinks are too pricey and lack of indoor seating.",
+      "identified_foods": ["hot sauce", "enchilada", "soft drinks"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Always great food and great service",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "We almost didn't go in. I'm so glad we did it was pretty darn good and a fun little place. Would be great for takeout",
+      "identified_foods": []
+    },
+    {
+      "rating": "3.0",
+      "review": "The salsa was too sweet in my opinion and the food overall didn't really have a Mexican taste. Very Americanized in a lot of ways, but the price point was good and the chicken had a good taste.",
+      "identified_foods": ["salsa", "chicken"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Always good food and service.  Nice variety!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "aLL THE TIMES with the good food! it's so all so good! Get that Sancho and eat it and smile! become the happy Sancho eater! deluxe is the deluxe! top ten out of the 9 places I like to eat.",
+      "identified_foods": ["sancho", "sancho"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Burgers are some of the best in town! Well priced and always delicious.",
+      "identified_foods": ["burgers"]
+    },
+    {
+      "rating": "4.0",
+      "review": "A nice little (literally) place to get a bite to eat. Extremely affordable, tastes good, quick service, and very friendly staff.",
+      "identified_foods": []
+    },
+    {
+      "rating": "2.0",
+      "review": "Online menu prices, from their own site, are incorrect. The taste of the food was good, but the meat on the taco salad was ice cold.",
+      "identified_foods": ["meat", "taco"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Outstanding small local restraunt. Best cheeseburgers and fries in Springfield IL. A wide variety of menu items, a mix of mexicano goodness.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Love it! Unique experience.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Springfield, IL. claims to be the chili capital of the U.S. and there's no better chili than Chadito's serves!",
+      "identified_foods": ["chili", "chili"]
+    },
+    {
+      "rating": "3.0",
+      "review": "The food is fast and cheap.  Their cheeseburgers are okay and their fries are great.  I do not like the cheese sauce on the horseshoe however.",
+      "identified_foods": ["cheese sauce"]
+    },
+    {
+      "rating": "4.0",
+      "review": "My fav place for mexican food. do yourself a favor and try this place. i think i might become a regular.",
+      "identified_foods": ["mexican food"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Love coming here they have a Mexican Sky Horseshoes and they also have Sancho's",
+      "identified_foods": ["horseshoes"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Great affordable Mexican-American food.",
+      "identified_foods": ["american food"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Love their horseshoes and tilapia tacos!",
+      "identified_foods": ["horseshoes", "tacos"]
+    },
+    {
+      "rating": "3.0",
+      "review": "Mediocre carry out joint... Burgers and simple Mexican dishes.... No decent seating.... Not going to make diners & drive ins list.... Not sure where all these great reviews came from. Maybe the owner takes teusdays off?",
+      "identified_foods": ["burgers"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Great American style Mexican food. Burgers, fries, and chili are all delicious as well! My go to \"fast food\" place.",
+      "identified_foods": ["mexican food", "chili"]
+    },
+    { "rating": "4.0", "review": "Great food", "identified_foods": [] },
+    {
+      "rating": "5.0",
+      "review": "The sanchos with hot sauce are the best around Springfield!",
+      "identified_foods": ["hot sauce"]
+    },
+    {
+      "rating": "5.0",
+      "review": "I love this place. They have a special buy 5 tacos get one free. But if you are going to order a large amount.  I would call ahead of time. They are always busy and they are very quick for both the people inside and drive thru.",
+      "identified_foods": ["tacos"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Great Sanchos and fun atmosphere",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "I love nachos! I had an order at RIVERTON 4th of July Celebration. It was the best order of nachos that I've ever had!",
+      "identified_foods": ["nachos", "nachos"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Yummy fast food tex-mex.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Great food. Best fish tacos in town, they only serve them on Wednesday n Friday.",
+      "identified_foods": ["fish"]
+    },
+    {
+      "rating": "1.0",
+      "review": "If you like authentic Mexican food, DO NOT eat here.. Not only was the food horrible but the staff is rude. I can make better Mexican food from home.",
+      "identified_foods": ["mexican food", "mexican food"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Delicious Mexican food and very friendly employees. There have been some complaints about prices but honestly everything was very reasonable- the website prices are correct.  I got a beef supreme sancho, a small enchilada and two sodas for about $13.00 which seems very reasonable to me. This is not the most authentic Mexican food I've ever had but it tastes great and they are very fast and friendly.",
+      "identified_foods": [
+        "mexican food",
+        "beef",
+        "enchilada",
+        "sodas",
+        "mexican food"
+      ]
+    },
+    {
+      "rating": "5.0",
+      "review": "Both the beef Sancho and a chicken soft taco were great.",
+      "identified_foods": ["beef", "chicken", "taco"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Awesome! The food and service was great. Will definitely be returning very soon!",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "Specials just about every day.  Nothing too fancy, but they do the basics (tacos) well!  Great fish tacos - crispy, hot, not too much tartar sauce.  Very satisfied!",
+      "identified_foods": ["tacos", "fish", "tacos"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Best tasting mexican/American food.  Great horseshoes. Great staff. Awsome owners.",
+      "identified_foods": ["american food", "horseshoes"]
+    },
+    {
+      "rating": "4.0",
+      "review": "Good food, friendly service",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "I love Chadito's food and their brownies are absolutely amazing. However, in the last 7 days I've gotten food from there 3 times and they've forgotten something three times. They're always apologetic and fix what I'm missing but still slightly annoying. Regardless, their food is great and I still plan to eat there!",
+      "identified_foods": ["brownies"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Great food. I had a burger and a burrito, both excellent. Service was quick and they have great, cheap lunch options.",
+      "identified_foods": ["burger"]
+    },
+    {
+      "rating": "5.0",
+      "review": "What can I say? Was a huge fan of Taco Trio back in the day!! Home of the Super Sancho! Chadito's is Taco Trio's son and the Sancho is still flame \ud83d\udd25\ud83d\udd25\ud83d\udd25\ud83d\udd25 I live up north and always stop here when I'm in the Field \ud83e\udd1f",
+      "identified_foods": ["taco", "sancho", "taco", "sancho"]
+    },
+    {
+      "rating": "1.0",
+      "review": "Staff was rude! I felt like they all on their monthly cycle. We weren't greeted, she said what you want. Then after she wrote the order down she walked away, and the drive-thru girl cashed us out with no thanks or anything. The guy in the back was cool. This will be my last visit there. I guess the whole LGBT scheme at Pridefest was just business.",
+      "identified_foods": ["scheme"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Tacobell, who??? Chaditos is your one stop shop for mexi-american.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Best Sancho is made by a guy named chad",
+      "identified_foods": ["sancho", "is made"]
+    },
+    {
+      "rating": "2.0",
+      "review": "Over priced. Food was ok for me, my wife did not like. Not close to traditional Mexican food. Tasted like a sloppy joe on a taco. Very sweet sauce.",
+      "identified_foods": ["mexican food", "taco"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Great tasting food at a great price.",
+      "identified_foods": []
+    },
+    { "rating": "5.0", "review": "Love it!", "identified_foods": [] },
+    {
+      "rating": "4.0",
+      "review": "Good food \ud83d\udc4d",
+      "identified_foods": []
+    },
+    {
+      "rating": "1.0",
+      "review": "So my experience here was really bad. My wife and I went through the drive thru at night and when we got home we realized our order was wrong. I called the store and the young people who worked that night were extremely rude. One guy told me if I wanted my order redone then I should have called sooner. They kept passing the phone back and forth between the three of them and then hung up on me. When I called back to get their names so I could let the manager know what happened they hung up on me again. I contacted the owner when this happened. He apologized and acted like he was upset that a customer had been treated so rudely. He said he would send some coupons so that he wouldn't lose our business and that the night crew would be dealt with. He took my name, number, and address. I never received any coupons and I have not been back to this restaurant since this happened. I wasn't only treated rudely by the staff I was lied to by the owner. I will not give them my business and have let my friends and family know not to go there either.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Awesome food, great price, one of the best and freshest mexican american places in town. The salsa is amazing and in the winter they serve really great chill. We'll eat anything on the menu here! The staff is always friendly and easy to get along with, we've never had a problem eating here.",
+      "identified_foods": ["salsa"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Fast service. Great food",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "Quality of food still seems good but prices have gone up and the service has seemed to slip",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "Good cheap food. Best for quick bite for lunch.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Good food, nice price. Terrible presentation, place look like it serve fast food. Nicely surprised",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Great fish tacos",
+      "identified_foods": ["fish", "tacos"]
+    },
+    {
+      "rating": "4.0",
+      "review": "They have just about everything and it tastes so good!!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Food and staff are the best! Say hi to the owner Chad when you stop by!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Very clean restaurant and n ice service",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Best fish tacos around!",
+      "identified_foods": ["fish"]
+    },
+    {
+      "rating": "4.0",
+      "review": "Good food, quick service",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Fast service very good food",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Always love chaditos great hamburgers",
+      "identified_foods": ["hamburgers"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Great six pack taco special .. Love the food!",
+      "identified_foods": ["taco"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Nothing but good things to say about the food and staff, keep it up !!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Love it we go once a week!",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "Great fish tacos!!!",
+      "identified_foods": ["fish"]
+    },
+    { "rating": "5.0", "review": "Very very fresh", "identified_foods": [] },
+    {
+      "rating": "5.0",
+      "review": "Great fast Mexican food.",
+      "identified_foods": ["mexican food"]
+    },
+    {
+      "rating": "4.0",
+      "review": "Delicious as usual, but cost more than i remember.",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Great good, great people and super fast!",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Love their food, always fast and friendly.",
+      "identified_foods": []
+    },
+    {
+      "rating": "3.0",
+      "review": "Great food but the service sucks everytime the ladies are very rude",
+      "identified_foods": []
+    },
+    { "rating": "5.0", "review": "Love it", "identified_foods": [] },
+    { "rating": "5.0", "review": "Great food", "identified_foods": [] },
+    {
+      "rating": "5.0",
+      "review": "Great fish tacos.  Friendly folks",
+      "identified_foods": ["fish", "tacos"]
+    },
+    { "rating": "5.0", "review": "Love it", "identified_foods": [] },
+    {
+      "rating": "3.0",
+      "review": "Customer service needs improvement.",
+      "identified_foods": []
+    },
+    {
+      "rating": "4.0",
+      "review": "Great food, i highly recommend the nachos and sanchos.",
+      "identified_foods": ["nachos"]
+    },
+    { "rating": "5.0", "review": "Always great", "identified_foods": [] },
+    {
+      "rating": "5.0",
+      "review": "Love their shrimp tacos!",
+      "identified_foods": ["shrimp"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Best taco burger Ever",
+      "identified_foods": ["taco"]
+    },
+    { "rating": "5.0", "review": "Worth the wait", "identified_foods": [] },
+    {
+      "rating": "3.0",
+      "review": "Good food decent priced tacos had no sauce on them tho only thing they messed up on but was overall good !",
+      "identified_foods": ["tacos"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Friendly staff. Good, quick good.",
+      "identified_foods": []
+    },
+    { "rating": "5.0", "review": "Delicious", "identified_foods": [] },
+    {
+      "rating": "5.0",
+      "review": "Hard chicken tacos and fish tacos \ud83d\udc4c\ud83c\udffc\ud83d\udc4c\ud83c\udffc\ud83d\udc4c\ud83c\udffc",
+      "identified_foods": ["chicken"]
+    },
+    { "rating": "1.0", "review": "Not good at all.", "identified_foods": [] },
+    {
+      "rating": "5.0",
+      "review": "Chadito's Mexican American Grill",
+      "identified_foods": []
+    },
+    {
+      "rating": "5.0",
+      "review": "Bomb, chicken fajita tacos... you're welcome \ud83d\ude0e",
+      "identified_foods": ["chicken"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Best fast food Mexican around!",
+      "identified_foods": []
+    },
+    { "rating": "5.0", "review": "Good tacos", "identified_foods": ["tacos"] },
+    {
+      "rating": "5.0",
+      "review": "Great horse shoe and fish tacos",
+      "identified_foods": ["fish"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Shrimp tacos are awesome",
+      "identified_foods": ["shrimp"]
+    },
+    {
+      "rating": "5.0",
+      "review": "Always friendly service.",
+      "identified_foods": []
+    },
+    {
+      "rating": "3.0",
+      "review": "Long wait inside. chick taking orders is rude. Chicken Sancho was Gross hard cold chicken.",
+      "identified_foods": ["chicken sancho", "chicken"]
+    },
+    {
+      "rating": "1.0",
+      "review": "Took forever, way overpriced, forgot both my cheese sauces and no reciept. Wont be going back.",
+      "identified_foods": []
+    },
+    { "rating": "1.0", "review": "", "identified_foods": [] },
+    { "rating": "5.0", "review": "", "identified_foods": [] },
+    { "rating": "4.0", "review": "", "identified_foods": [] },
+    { "rating": "4.0", "review": "", "identified_foods": [] }
+  ]
+}

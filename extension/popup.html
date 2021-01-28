@@ -2,75 +2,89 @@
 
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/popup.css"  media="screen,projection"/>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Import materialize.css -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/popup.css"
+      media="screen,projection"
+    />
   </head>
 
   <body>
-    <nav>
+    <nav class="pink accent-3">
       <div class="nav-wrapper">
-<<<<<<< HEAD
-        <a href="#" class="brand-logo center">Logo</a>
-=======
         <a href="#" class="brand-logo center">Food Pulse</a>
 
         <a href="#" class="brand-logo right"
         ><i id="help-icon" class="material-icons">info</i></a>
 
->>>>>>> d9d3b39... logos + message edits
       </div>
     </nav>
-
-    <div class="container"> 
-      <div>
-        <div class="card">
-
-          <div class="card-content">
-            <p>restaurant name</p>
-          </div>
-
-          <div class="card-tabs">
-            <ul class="tabs tabs-fixed-width">
-              <li class="tab"><a class="active" href="#best">Best Foods</a></li>
-              <li class="tab"><a href="#worst">Worst Foods</a></li>
-            </ul>
-          </div>
-
-          <div class="card-content grey lighten-4">
-            <div id="best">
-              <ul class="collection">
-                <li class="collection-item">Best</li>
-                <li class="collection-item">Best</li>
-                <li class="collection-item">Best</li>
-              </ul>
-            </div>
-
-            <div id="worst">
-              <ul class="collection">
-                <li class="collection-item">Worst</li>
-                <li class="collection-item">Worst</li>
-                <li class="collection-item">Worst</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card-action center">
-            <a class="waves-effect waves-light btn"><i id="reviews" class="material-icons right">restaurant</i>Show me what's good!</a>
-          </div>
-
+    </div>
+    <!-- <div id="waiting-content">"If I’ve learned one thing, it’s that before you get anywhere in life, you gotta stop listening to yourself." - Jerry</div> -->
+    <div class="container">
+      <h3 id="restaurantName" class="center"></h3>
+      <h4 id="incorrect-url-header" style="text-align: center;">The current url is <b>not valid.</b></h4>
+      <div id="timeout-message" class="hidden incorrect-url-text">
+        <h4 style="text-align: center;margin-top: 0;" >The request took <b>too long</b> to process.</h4>
+        <div class="flex-wrapper">
+        <img src="gif/timeout-rick.gif" width="300" height="300" frameBorder="0" class="gif-border"></img>
         </div>
+        <p><b>Suggestions by Rick:</b></p>
+        <ol><li>Check to make sure you opened the reviews.</li><br>
+          <li>Select a restaurant with fewer reviews.</li> <br>
+        </ol> 
       </div>
+      
+      <img id="incorrect-url-rick" src="gif/rick-no.gif" width="300" height="300" frameBorder="0" class="hidden gif-border"></img>
+      <img id="show-me-what-you-got" src="gif/show-me-what-you-got.gif" width="300" height="150" class="hidden gif-border"></img>
+      <div id="incorrect-url" class="hidden incorrect-url-text">
+        <p><b>Troubleshooting guide by Rick:</b></p>
+        <ol><li>Check the end of the food reviews url and make sure it ends in coordinates followed by two closing brackets. If it does, proceed to step 3. If not, go to step 2.</li><br>
+          <li>Search for the restaurant you want to get the food items for on Google. In the Google results, click on any other restaurant than the one you are searching for. After the new window opens, click on the restaurant you are interested in and open the reviews. The url should now end in brackets (don't ask us why).</li> <br>
+          <li>If you still have any issues (and you are sure you did everything correctly), send an angry email to the devs demanding your issue be fixed asap.</li>
+        </ol> 
+      </div>
+      <div id="results-anchor">
+        <h6>Top foods</h6>
+        <div id="flex-wrapper" class="flex-wrapper"></div>
+        <div id="results-wrapper" class="results-wrapper"></div>
+      </div>
+      <div id="give-me-reviews-button" class="card-action center hidden">
+        <a id="reviews" class="waves-effect waves-light btn"
+          ><i class="material-icons right">restaurant</i>Let's go already!</a>
+
+      <div id="sw-time">00:00</div>
+      <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+      <div id="waiting-content"></div>
     </div>
 
     <!-- Import JS files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/popup.js"></script>
+    <script type="text/javascript" src="materialize.min.js"></script>
+    <!-- <script src="popup.js"></script> -->
+    <script src="bundle.js"></script>
+            <!-- <img src="logo.png" width="80" height="50"> -->
+    </div>
   </body>
 
 </html>

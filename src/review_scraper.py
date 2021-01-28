@@ -21,6 +21,7 @@ class GoogleReviewScraper:
         if local:
             # chrome_options.add_argument("--headless")
             loc = os.getcwd() + '/src/chromedriver'
+            print(loc)
             driver = webdriver.Chrome(loc, options=chrome_options)
 
         else:
@@ -85,6 +86,7 @@ class GoogleReviewScraper:
         for review in review_boxes:
             reviews_text.append(review.text)
 
+
         for star in review_stars:
             label = star.get_attribute("aria-label")
             stars.append(label.split()[1])
@@ -102,12 +104,9 @@ class GoogleReviewScraper:
     # Main function to scrape all the info about the reviews
     def get_reviews(self, url):
         self._driver.implicitly_wait(100)
-
-        print(url)
-
         # Open the specified URL
         self._driver.get(url)
-
+        
         self._dialog_box = self._driver.find_element_by_class_name("review-dialog-body")
 
         self._get_general_info()
@@ -130,9 +129,9 @@ class GoogleReviewScraper:
 
         self._driver.quit()
         # Saving json files for testing
-        _file = 'src/entity/scrapped_restaurant_reviews/restaurant.json'
-        with open(_file,'w') as json_file:
-            json.dump(data, json_file)
+        # _file = 'src/entity/scrapped_restaurant_reviews/restaurant.json'
+        # with open(_file,'w') as json_file:
+        #     json.dump(data, json_file)
 
 
         return json.dumps(data)
@@ -140,10 +139,9 @@ class GoogleReviewScraper:
 
 # print(type(reviews))
 if __name__ == "__main__":
-    url = 'https://www.google.com/search?sxsrf=ALeKk00sF7Cd7DbPJktAmB3JuY1I8fvWEA:1602444823747&q=local%20restaurants&npsic=0&rflfq=1&rldoc=1&rlha=0&rllag=41777374,-88209195,433&tbm=lcl&sa=X&ved=2ahUKEwjh5_aTpK3sAhXDVs0KHfBWA5IQjGp6BAgNEGI&biw=1440&bih=821&rlfi=hd:;si:&tbs=lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3american_1restaurant!1m4!1u5!2m2!5m1!1sgcid_3seafood_1restaurant!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!1m4!1u22!2m2!21m1!1e1!2m1!1e5!2m1!1e1!2m1!1e3!2m4!1e2!5m2!2m1!2e9!3sIAEqAlVT,lf:1,lf_ui:9&rlst=f#lrd=0x880ef934af97c5e9:0x8816413c99534c2e,1,,,&rlfi=hd:;si:9806096967172049966,l,ChFsb2NhbCByZXN0YXVyYW50c1ogCgtyZXN0YXVyYW50cyIRbG9jYWwgcmVzdGF1cmFudHM,y,aEKRqBPTJWY;mv:[[41.7972548,-88.14491],[41.7510391,-88.2556199]]'
-    
-    # # Are we running locally or on AWS lambda?
+    # url = 'https://www.google.com/search?q=poke%20bowl%20near%20me&oq=pokebowl+near+me&aqs=chrome..69i57j46i10j0i10i457j0i402l2j46i10i175i199j0i10.2399j0j4&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:9&tbm=lcl&sxsrf=ALeKk03XEHQuldhQ8cJc_P3KyO5ajFE4_w:1610648692567&rflfq=1&num=10&rldimm=14153835342825193454&lqi=ChFwb2tlIGJvd2wgbmVhciBtZRk3DN8Eiej50yIDkAEBWh4KCXBva2UgYm93bCIRcG9rZSBib3dsIG5lYXIgbWWaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTTRiVGRRVVhGQlJSQUI&phdesc=vwa_ghd3fdM&ved=2ahUKEwjZmrb5hZzuAhVMKawKHcyKCRIQvS4wAXoECAMQTA&rlst=f#lrd=0x880ef9b77317c08d:0xc46c86410a76ffee,1,,,&rlfi=hd:;si:14153835342825193454,l,ChFwb2tlIGJvd2wgbmVhciBtZRk3DN8Eiej50yIDkAEBWh4KCXBva2UgYm93bCIRcG9rZSBib3dsIG5lYXIgbWWaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTTRiVGRRVVhGQlJSQUI,y,vwa_ghd3fdM;mv:[[41.9344803,-87.9557571],[41.6670926,-88.3889528]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u5!2m2!5m1!1sgcid_3japanese_1restaurant!1m4!1u5!2m2!5m1!1sgcid_3seafood_1restaurant!1m4!1u2!2m2!2m1!1e1!1m4!1u1!2m2!1m1!1e1!1m4!1u1!2m2!1m1!1e2!1m4!1u22!2m2!21m1!1e1!2m1!1e2!2m1!1e5!2m1!1e1!2m1!1e3!3sIAEqAlVT,lf:1,lf_ui:9'
+    url = "https://www.google.com/search?tbm=lcl&sxsrf=ALeKk03BEntQ0zk_sKj_brG_N8gOLCyKSw%3A1610653152729&ei=4J0AYOD6K8_SsAXPiKlw&q=poke+bowl&oq=poke+bowl&gs_l=psy-ab.3..35i39k1l2j46i433i67k1j0i67k1j0i433k1j0l5.3477102.3478179.0.3478227.9.7.0.0.0.0.207.672.0j2j2.4.0....0...1c.1.64.psy-ab..5.4.672...0i433i67k1j46i433i199i291i67k1j46i199i291k1j46i433i199i291k1j46i199i175i67k1j46i199i175k1.0.CX5jv6c-PvQ#lrd=0x880ef9b77317c08d:0xc46c86410a76ffee,1,,,&rlfi=hd:;si:14153835342825193454,l,Cglwb2tlIGJvd2wZNwzfBIno-dNaFgoJcG9rZSBib3dsIglwb2tlIGJvd2yaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTTRiVGRRVVhGQlJSQUI,y,vwa_ghd3fdM;mv:[[41.940206499999995,-87.58200409999999],[41.666768399999995,-88.3047095]]"
+    # Are we running locally or on AWS lambda?
     local = True
-    scraper = GoogleReviewScraper(local)
-    reviews = scraper.get_reviews(url)
-    #print(reviews)
+    reviews = GoogleReviewScraper(local).get_reviews(url)
+    
