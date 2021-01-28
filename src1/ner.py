@@ -3,12 +3,14 @@ import spacy
 import os
 import json
 import string
+from nltk.stem.snowball import SnowballStemmer
 
 class NER: 
     def __init__(self, reviews, test_output):
         self.model = self.spacy_model_setup()
         self.reviews = reviews
         self.test_output = test_output
+        self.stemmer = SnowballStemmer("english")
 
     def spacy_model_setup(self):
         '''
@@ -19,7 +21,7 @@ class NER:
         loaded_model = spacy.load(model_location)  
 
         # Log the model location
-        print("Loaded model '%s'" % model_location)
+        # print("Loaded model '%s'" % model_location)
         return loaded_model
 
     def recognize_words(self):
@@ -45,7 +47,7 @@ class NER:
                 [1 if len(ent.text)<=3 else all_recognized_words.append(ent.text.lower().translate(str.maketrans('', '', string.punctuation))) for ent in doc.ents ]
 
             # Append the words 
-            [1 if len(ent.text)<=3 else review_recognized_words.append(ent.text.lower().translate(str.maketrans('', '', string.punctuation))) for ent in doc.ents ]
+            [1 if len(ent.text)<=3 else review_recognized_words.append(self.stemmer.stem(ent.text.lower().translate(str.maketrans('', '', string.punctuation)))) for ent in doc.ents ]
             
             # Add the words to the json
             contents['reviews'][ind]['identified_foods'] = review_recognized_words
@@ -68,4 +70,10 @@ class NER:
 
 if __name__ == '__main__':
 
-    NER(True).recognize_words()
+    # NER(True).recognize_words()
+    print('yo')
+    # stemmer = SnowballStemmer("english")
+    # # stemmer = PorterStemmer()
+    # plurals = ["fries", 'tacos', 'burgers', 'sandwiches', 'nuggets']
+    # # print([stemmer.stem(plural) for plural in plurals])
+    # print([stemmer.stem(plural) for plural in plurals])
