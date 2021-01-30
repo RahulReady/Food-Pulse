@@ -3,7 +3,9 @@ import spacy
 import os
 import json
 import string
-from nltk.stem.snowball import SnowballStemmer
+nltk.data.path.append("/tmp") 
+nltk.download("wordnet", download_dir = "/tmp")
+from nltk.stem import WordNetLemmatizer 
 
 class NER: 
     def __init__(self, reviews, test_output):
@@ -47,7 +49,7 @@ class NER:
                 [1 if len(ent.text)<=3 else all_recognized_words.append(ent.text.lower().translate(str.maketrans('', '', string.punctuation))) for ent in doc.ents ]
 
             # Append the words 
-            [1 if len(ent.text)<=3 else review_recognized_words.append(self.stemmer.stem(ent.text.lower().translate(str.maketrans('', '', string.punctuation)))) for ent in doc.ents ]
+            [1 if len(ent.text)<=3 else review_recognized_words.append(self.lemmatizer.lemmatize(ent.text.lower().translate(str.maketrans('', '', string.punctuation)))) for ent in doc.ents ]
             
             # Add the words to the json
             contents['reviews'][ind]['identified_foods'] = review_recognized_words
@@ -69,10 +71,6 @@ class NER:
             print(cnts)
 
 if __name__ == '__main__':
-
-    # NER(True).recognize_words()
-    stemmer = SnowballStemmer("english")
-    # # stemmer = PorterStemmer()
-    plurals = ["fried rice", 'rice', 'burgers', 'sandwiches', 'nuggets']
-    # # print([stemmer.stem(plural) for plural in plurals])
-    print([stemmer.stem(plural) for plural in plurals])
+    lemmatizer = WordNetLemmatizer() 
+    plurals = ["fried rices", 'omelettes', 'burgers', 'sandwiches', 'nuggets', 'cheese burger', 'tacos']
+    print([lemmatizer.lemmatize(plural) for plural in plurals])
