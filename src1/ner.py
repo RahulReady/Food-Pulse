@@ -71,9 +71,8 @@ class NER:
 if __name__ == '__main__':
 
     # NER(True).recognize_words()
-    print('yo')
-    # stemmer = SnowballStemmer("english")
+    stemmer = SnowballStemmer("english")
     # # stemmer = PorterStemmer()
-    # plurals = ["fries", 'tacos', 'burgers', 'sandwiches', 'nuggets']
+    plurals = ["fried rice", 'rice', 'burgers', 'sandwiches', 'nuggets']
     # # print([stemmer.stem(plural) for plural in plurals])
-    # print([stemmer.stem(plural) for plural in plurals])
+    print([stemmer.stem(plural) for plural in plurals])
