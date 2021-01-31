@@ -14,7 +14,7 @@ Check out our finished project (includes a video tutorial) ! <br>https://chrome.
 3. The scraped reviews are sent to another Lambda function (2) which uses a trained Spacy named-entity recognition model to find all of the food entities and then performs sentiment analysis to find the most "passionately" talked about foods.
 4. Lambda function 2 then returns the foods to lambda function 1, which then returns the data back to the extension (pretty simple, right?).
 
-<hr>
+<br>
 
 ## Navigating this madness
 
@@ -46,14 +46,13 @@ Check out our finished project (includes a video tutorial) ! <br>https://chrome.
             <li><b>ner.py</b>: Performs named entity recognition on the reviews.</li>
             <li><b>sentiment.py</b>: Performs sentiment analysis and returns the top food items.</li>
         </ul>
-    <li><b>css</b>: Css for the <a href="https://materializecss.com/">Materialize library</a> and for the popup.</li>
     <li><b>.gitignore</b>: Files we don't push to this repo.
     <li><b>docker-compose.yml</b>: Setting up the local Docker env to be used for local testing.
     <li><b>Dockerfile</b>: Instructions needed to setup the Docker image.
     <li><b>Makefile</b>: A set of instructions that can be run with a single specified command. This was used for local testing that simulated running Lambda functions on the cloud, and helped create deployment packages for Lambda. Big shoutout to <a href="https://github.com/jairovadillo/pychromeless">Jairo Vadillo</a>.</li>
     <li><b>requirements-scraper.txt</b>: Update needed.
 
-<hr>
+<br>
 
 ## Software Architecture next steps:
 
@@ -68,12 +67,13 @@ Check out our finished project (includes a video tutorial) ! <br>https://chrome.
 
 <ul>
 <li>For people/orgs with a big wallet ($400), <a href="https://prodi.gy/">Prodi.gy</a> seems like a fantastic way to train on more complex food items. Since our budget was a whopping $0, this was a bit of a reach.</li>
-<li>Look into many other possible ways to train a more robust model. For example, using <a href="https://spacy.io/universe/project/NeuroNER">NeuroNER</a>.</li>
+<li>Look into many other possible ways to train a more robust model. For example, using <a href="https://spacy.io/universe/project/NeuroNER">NeuroNER</a>. Maybe create a list of possible food items for a restaurant type, and use levenshtein distance to find the closest match between spacy identified nouns in a review and the list of food items.</li>
 <li>Attempting to perform sentiment analysis the 'right' way as there is more to it than using TextBlob. </li>
-<li>What about edge cases where food entities are referenced in a different sentence? This is where you need to dive into another interesting topic called 'entity linking.'</li>
+<li>What about edge cases where food entities are referenced in a different sentence? This is where you need to dive into another interesting topic called 'entity linking'.</li>
 </ul>
+<br>
 
 ## Special Thanks
 
-- [Madhur Malhotra](https://www.linkedin.com/in/madhurxyz/) - For helping us create a bomb a@@ logo and powerpoint presentation.
-- [Pranay Marella](https://www.linkedin.com/in/pranay-marella-0169018b/) - For helping with front-end features.
+- [Madhur Malhotra](https://www.linkedin.com/in/madhurxyz/) - For helping us create a bomb a$$ logo and powerpoint presentation.
+- [Pranay Marella](https://www.linkedin.com/in/pranay-marella-0169018b/) - For helping with tricky front-end features.
