@@ -7,15 +7,6 @@ Check out our finished project (includes a video tutorial) ! <br>https://chrome.
 
 **Version 1.1** <br>
 
-## Data Pipeline
-
-1. Send the restaurant url to an AWS Lambda function (1).
-2. Lambda function 1 opens up a headless browser and scrapes all of the restaurant reviews of the specified url.
-3. The scraped reviews are sent to another Lambda function (2) which uses a trained Spacy named-entity recognition model to find all of the food entities and then performs sentiment analysis to find the most "passionately" talked about foods.
-4. Lambda function 2 then returns the foods to lambda function 1, which then returns the data back to the extension (pretty simple, right?).
-
-<br>
-
 ## Navigating this madness
 
 <ul>
@@ -50,30 +41,12 @@ Check out our finished project (includes a video tutorial) ! <br>https://chrome.
     <li><b>docker-compose.yml</b>: Setting up the local Docker env to be used for local testing.
     <li><b>Dockerfile</b>: Instructions needed to setup the Docker image.
     <li><b>Makefile</b>: A set of instructions that can be run with a single specified command. This was used for local testing that simulated running Lambda functions on the cloud, and helped create deployment packages for Lambda. Big shoutout to <a href="https://github.com/jairovadillo/pychromeless">Jairo Vadillo</a>.</li>
-    <li><b>requirements-scraper.txt</b>: Update needed.
+    <li><b>requirements-scraper.txt</b>: Update needed.</ul>
 
-<br>
-
-## Software Architecture next steps:
-
-<ul>
-<li>Store the reviews in a db, so you can write once and read many to avoid redundancies in lookup.</li>
-<li>Look up restaurants for the user to enter from the stored reviews. If it's not available, then perform the live analysis.</li>
-<li>Set up an offline batch processing script which mass scrapes restaurants and adds it to a db.</li>
-<li>Combine the two lambda functions into one. Will require the use of Lambda layers for Lambda function 1.</li>
-</ul>
-
-## Data Science next steps:
-
-<ul>
-<li>For people/orgs with a big wallet ($400), <a href="https://prodi.gy/">Prodi.gy</a> seems like a fantastic way to train on more complex food items. Since our budget was a whopping $0, this was a bit of a reach.</li>
-<li>Look into many other possible ways to train a more robust model. For example, using <a href="https://spacy.io/universe/project/NeuroNER">NeuroNER</a>. Maybe create a list of possible food items for a restaurant type, and use levenshtein distance to find the closest match between spacy identified nouns in a review and the list of food items.</li>
-<li>Attempting to perform sentiment analysis the 'right' way as there is more to it than using TextBlob. </li>
-<li>What about edge cases where food entities are referenced in a different sentence? This is where you need to dive into another interesting topic called 'entity linking'.</li>
-</ul>
 <br>
 
 ## Special Thanks
 
 - [Madhur Malhotra](https://www.linkedin.com/in/madhurxyz/) - For helping us create a bomb a$$ logo and powerpoint presentation.
 - [Pranay Marella](https://www.linkedin.com/in/pranay-marella-0169018b/) - For helping with tricky front-end features.
+- [Leyuan Yu](https://www.linkedin.com/in/leyuanyu/) - For helping with the Data Science components.
